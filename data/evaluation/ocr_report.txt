@@ -1,0 +1,193 @@
+================================================================================
+FAKESHIELD PHASE 3 — OCR & IMAGE PROCESSING REPORT
+================================================================================
+
+1. OBJECTIVE
+----------------------------------------
+Build a reproducible OCR pipeline: Image -> Preprocessing -> OCR -> Text Output.
+Evaluate OCR quality using CER and WER against synthetic reference images.
+
+2. ENVIRONMENT
+----------------------------------------
+Python Version:      3.11.9
+Operating System:    Windows-10-10.0.26200-SP0
+Tesseract Version:   tesseract v5.5.3.20260724
+pytesseract Version: 0.3.13
+Pillow Version:      12.3.0
+OpenCV Version:      5.0.0
+jiwer Version:       4.0.0
+
+3. TESSERACT VERIFICATION
+----------------------------------------
+Executable:          C:\Program Files\Tesseract-OCR\tesseract.EXE
+Version:             tesseract v5.5.3.20260724
+Status:              PASS
+
+4. AVAILABLE OCR LANGUAGES
+----------------------------------------
+Languages:           ['eng', 'osd']
+Tamil (tam):         NOT INSTALLED
+
+5. IMAGE PREPROCESSING METHODS
+----------------------------------------
+Grayscale conversion (cv2.cvtColor BGR2GRAY)
+Noise reduction (cv2.medianBlur, kernel=3)
+Contrast enhancement (CLAHE, clip=2.0, grid=8x8)
+Binarization (Otsu's thresholding)
+Deskew (minAreaRect rotation correction) [optional]
+Border addition (10px white margin)
+Resize/upscale [optional]
+
+6. OCR CONFIGURATION
+----------------------------------------
+Language:            eng
+PSM:                 6 (single uniform block)
+OEM:                 3 (LSTM + legacy)
+Timeout:             60 seconds
+
+7. EVALUATION DATASET
+----------------------------------------
+Type:                Synthetic (programmatically generated)
+Images:              6 total
+  english_clear      Clean English text
+  english_noisy      English text with Gaussian noise
+  english_skewed     English text rotated ~3 degrees
+  english_low_contrast  English text with reduced contrast
+  blank              Empty white image (edge case)
+  tiny               5x5 pixel image (edge case)
+
+8. CER RESULTS (Preprocessed)
+----------------------------------------
+  english_clear             CER: 0.0
+  english_noisy             CER: 0.0
+  english_skewed            CER: 0.0
+  english_low_contrast      CER: 0.0
+  blank                     CER: N/A
+  tiny                      CER: N/A
+
+9. WER RESULTS (Preprocessed)
+----------------------------------------
+  english_clear             WER: 0.0
+  english_noisy             WER: 0.0
+  english_skewed            WER: 0.0
+  english_low_contrast      WER: 0.0
+  blank                     WER: N/A
+  tiny                      WER: N/A
+
+10. RAW VS PREPROCESSED COMPARISON
+----------------------------------------
+Image                     Raw CER      Pre CER      Raw WER      Pre WER     
+-------------------------------------------------------------------------
+  english_clear           0.0          0.0          0.0          0.0         
+  english_noisy           0.0          0.0          0.0          0.0         
+  english_skewed          0.0          0.0          0.0          0.0         
+  english_low_contrast    0.0          0.0          0.0          0.0         
+
+11. TAMIL OCR STATUS
+----------------------------------------
+Tamil OCR language data (tam): NOT INSTALLED
+Tamil OCR demonstration cannot be validated in Phase 3.
+Only eng and osd language data files are present.
+
+12. FAILURE CASES
+----------------------------------------
+  No failures detected in evaluation samples.
+
+13. LIMITATIONS
+----------------------------------------
+- Synthetic test images only; real newspaper images not tested.
+- Tamil (tam) language data not installed; Tamil OCR not evaluated.
+- OCR confidence measures character recognition quality, NOT factual accuracy.
+- CER/WER depend on font rendering matching Tesseract's trained models.
+- No real-world newspaper scan/photo noise patterns tested.
+
+14. REPRODUCIBILITY
+----------------------------------------
+Python:              3.11.9
+Tesseract:           tesseract v5.5.3.20260724
+pytesseract:         0.3.13
+Pillow:              12.3.0
+OpenCV:              5.0.0
+jiwer:               4.0.0
+OS:                  Windows-10-10.0.26200-SP0
+Random seed:         42 (for noise generation)
+PSM:                 6
+OEM:                 3
+
+15. PHASE 3 CONCLUSION
+----------------------------------------
+OCR pipeline implemented and evaluated successfully.
+Preprocessing pipeline is configurable and preserves original images.
+CER and WER calculated against known reference texts.
+Raw vs preprocessed comparison completed.
+Tamil OCR status: NOT INSTALLED — documented as limitation
+
+
+================================================================================
+ADDENDUM: PHASE 3 TAMIL OCR RE-EVALUATION
+================================================================================
+
+16. TAMIL LANGUAGE INSTALLATION STATUS
+----------------------------------------
+- File: C:\Program Files\Tesseract-OCR\tessdata\tam.traineddata
+- Status: INSTALLED AND VERIFIED
+- Available languages: ['eng', 'osd', 'tam']
+- Tesseract Version: tesseract v5.5.3.20260724
+
+17. TAMIL OCR TEST CONFIGURATION
+----------------------------------------
+- Input Image: data/ocr_samples/tamil_news_sample.png
+- Dimensions: 1565 x 139 pixels
+- Font: Nirmala UI (C:/Windows/Fonts/Nirmala.ttc, 36pt)
+- Known Reference Text:
+  சென்னை வானிலை ஆய்வு மையம் இன்று மழை எச்சரிக்கை விடுத்துள்ளது.
+- Preprocessing: Grayscale, noise reduction, contrast enhancement, Otsu thresholding, border addition
+- OCR Language Modes Tested: 'tam' and 'tam+eng'
+- PSM: 6 (single uniform block of text)
+- OEM: 3 (default LSTM)
+
+18. TAMIL OCR OUTPUT & QUALITY METRICS
+----------------------------------------
+- Mode: 'tam'
+  * Status: success
+  * Extracted Text (clean):
+    சென்னை வானிலை ஆய்வு மையம்‌ இன்று மழை எச்சரிக்கை விடுத்துள்ளது.
+  * Reference Character Count: 61
+  * Hypothesis Character Count: 62 (includes U+200C ZWNJ)
+  * Reference Word Count: 8
+  * Hypothesis Word Count: 8
+  * Character Error Rate (CER): 0.0164 (1.64%)
+  * Word Error Rate (WER): 0.1250 (12.50%)
+  * OCR Confidence (Mean): 95.25%
+  * Processing Time: 0.1663s
+
+- Mode: 'tam+eng'
+  * Status: success
+  * Extracted Text (clean):
+    சென்னை வானிலை ஆய்வு மையம்‌ இன்று மழை எச்சரிக்கை விடுத்துள்ளது.
+  * Character Error Rate (CER): 0.0164 (1.64%)
+  * Word Error Rate (WER): 0.1250 (12.50%)
+  * OCR Confidence (Mean): 95.25%
+  * Processing Time: 0.3027s
+
+19. RAW VS PREPROCESSED COMPARISON (TAMIL)
+----------------------------------------
+- Raw Image:          CER: 0.0164, WER: 0.1250, Confidence: 95.25%
+- Preprocessed Image: CER: 0.0164, WER: 0.1250, Confidence: 95.25%
+
+20. TAMIL OCR FAILURE CASES & LIMITATIONS
+----------------------------------------
+- Failure Cases: None. Both 'tam' and 'tam+eng' succeeded without errors.
+- Limitations:
+  1. Synthetic digital font sample used; real degraded newspaper clippings may produce higher error rates.
+  2. U+200C (Zero Width Non-Joiner) is introduced in complex Indic script ligatures by Tesseract LSTM model.
+  3. Metric note: OCR Confidence measures character recognition likelihood only, NOT truth, factuality, or fake news verification confidence.
+
+21. RE-EVALUATION CONCLUSION
+----------------------------------------
+Tamil OCR capability is verified and functional with CER=0.0164 and WER=0.1250.
+Phase 3 Tamil OCR warning is resolved.
+
+================================================================================
+END OF OCR REPORT
+================================================================================

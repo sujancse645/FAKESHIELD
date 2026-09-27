@@ -1,0 +1,164 @@
+================================================================================
+FAKESHIELD DATASET EVALUATION REPORT
+================================================================================
+
+1. DATASET SIZES
+----------------------------------------
+IFND Raw Rows:                  56,714
+IFND Clean Rows:                56,714
+LIAR Train Split Rows:          10,240
+LIAR Test Split Rows:           1,267
+LIAR Validation Split Rows:     1,284
+LIAR Combined Total Rows:       12,791
+
+2. COLUMNS & SCHEMA
+----------------------------------------
+IFND Columns (7):
+  - id
+  - Statement
+  - Image
+  - Web
+  - Category
+  - Date
+  - Label
+
+LIAR Raw/Combined Columns (15):
+  - id
+  - label
+  - statement
+  - subject
+  - speaker
+  - job_title
+  - state_info
+  - party_affiliation
+  - barely_true_counts
+  - false_counts
+  - half_true_counts
+  - mostly_true_counts
+  - pants_on_fire_counts
+  - context
+  - split
+
+3. LABEL DISTRIBUTIONS
+----------------------------------------
+IFND Label Distribution:
+  - TRUE        :  37800 (66.65%)
+  - Fake        :  18914 (33.35%)
+
+LIAR Combined Label Distribution:
+  - half-true      :   2627 (20.54%)
+  - false          :   2507 (19.60%)
+  - mostly-true    :   2454 (19.19%)
+  - barely-true    :   2103 (16.44%)
+  - true           :   2053 (16.05%)
+  - pants-fire     :   1047 ( 8.19%)
+
+LIAR (train) Label Distribution:
+  - half-true      :  2114 (20.64%)
+  - false          :  1995 (19.48%)
+  - mostly-true    :  1962 (19.16%)
+  - true           :  1676 (16.37%)
+  - barely-true    :  1654 (16.15%)
+  - pants-fire     :   839 ( 8.19%)
+
+LIAR (test) Label Distribution:
+  - half-true      :   265 (20.92%)
+  - false          :   249 (19.65%)
+  - mostly-true    :   241 (19.02%)
+  - barely-true    :   212 (16.73%)
+  - true           :   208 (16.42%)
+  - pants-fire     :    92 ( 7.26%)
+
+LIAR (valid) Label Distribution:
+  - false          :   263 (20.48%)
+  - mostly-true    :   251 (19.55%)
+  - half-true      :   248 (19.31%)
+  - barely-true    :   237 (18.46%)
+  - true           :   169 (13.16%)
+  - pants-fire     :   116 ( 9.03%)
+
+4. MISSING VALUES ANALYSIS
+----------------------------------------
+IFND Missing Values:
+  - id             :      0 ( 0.00%)
+  - Statement      :      0 ( 0.00%)
+  - Image          :      0 ( 0.00%)
+  - Web            :      0 ( 0.00%)
+  - Category       :      0 ( 0.00%)
+  - Date           :  11321 (19.96%)
+  - Label          :      0 ( 0.00%)
+
+LIAR Combined Missing Values:
+  - id                    :      0 ( 0.00%)
+  - label                 :      0 ( 0.00%)
+  - statement             :      0 ( 0.00%)
+  - subject               :      2 ( 0.02%)
+  - speaker               :      2 ( 0.02%)
+  - job_title             :   3568 (27.89%)
+  - state_info            :   2751 (21.51%)
+  - party_affiliation     :      2 ( 0.02%)
+  - barely_true_counts    :      2 ( 0.02%)
+  - false_counts          :      2 ( 0.02%)
+  - half_true_counts      :      2 ( 0.02%)
+  - mostly_true_counts    :      2 ( 0.02%)
+  - pants_on_fire_counts  :      2 ( 0.02%)
+  - context               :    131 ( 1.02%)
+  - split                 :      0 ( 0.00%)
+
+5. DUPLICATE ANALYSIS
+----------------------------------------
+IFND Exact Duplicate Rows:               0
+IFND Duplicate Statements:               374
+LIAR Train Duplicate Rows:               0
+LIAR Test Duplicate Rows:                0
+LIAR Validation Duplicate Rows:          0
+LIAR Combined Duplicate Rows:            0
+LIAR Combined Duplicate Statements:      26
+
+6. OBSERVATIONS
+----------------------------------------
+1. Nature of IFND Dataset:
+   - IFND is an Indian multimodal fake news dataset featuring statement headlines,
+     associated web publisher sources (29 sources like DNAINDIA, TRIBUNEINDIA, THEPRINT),
+     image URLs (46,755 unique image links), category tags, and binary labels ('TRUE'/'Fake').
+   - The text statements represent concise headline-style news claims from Indian media contexts.
+
+2. Nature of LIAR Dataset:
+   - LIAR is a benchmark political claim dataset containing 12,791 statements collected from PolitiFact.
+   - It uses a 6-class fine-grained truth scale: half-true, false, mostly-true, true, barely-true, pants-fire.
+   - Includes rich speaker context, party affiliation, speaker state, speaker credit history counts, and venue.
+   - It is entirely text-based with zero image references.
+
+3. Multilingual and Multimodal Complementarity:
+   - IFND provides multimodal Indian-context news grounding essential for FakeShield's Indian news target.
+   - LIAR provides structured fine-grained claim classification and rich statement verification nuance.
+   - In accordance with FakeShield specifications, IFND and LIAR remain strictly segregated and unmerged.
+
+7. PROBLEMS FOUND & DATA QUALITY FINDINGS
+----------------------------------------
+1. Character Encoding in Raw IFND:
+   - Problem: IFND.csv contains non-UTF-8 bytes (e.g. byte 0xd4 for curly quotes) causing UnicodeDecodeError
+     when read with standard UTF-8.
+   - Resolution: Loaded with Latin-1 (latin1/iso-8859-1) encoding and standardized to clean UTF-8 output.
+
+2. High Proportion of Missing Dates in IFND:
+   - Problem: 11,321 out of 56,714 rows (19.96%) in IFND have missing values for the 'Date' column.
+   - Impact: Temporal grounding cannot rely solely on the Date column without fallback mechanisms.
+
+3. Typographical Category Error in IFND:
+   - Problem: 'Category' column contains a typo entry 'MISLEADIND' (18 rows) alongside 'MISLEADING' (4,059 rows).
+   - Impact: When filtering or aggregating by category, 'MISLEADIND' should be recognized as 'MISLEADING'.
+
+4. Class Imbalance in IFND:
+   - Problem: IFND has 37,800 TRUE rows (66.65%) and 18,914 Fake rows (33.35%), creating a 2:1 majority for TRUE.
+   - Impact: Evaluation metrics must use balanced/macro F1 rather than raw accuracy.
+
+5. Missing Header and Metadata in LIAR:
+   - Problem: Raw LIAR TSV files contain no header row, requiring explicit schema mapping.
+   - In addition, metadata columns have missing values: job_title is missing in 27.9% of rows,
+     state_info is missing in 21.5% of rows, and context is missing in 1.0% of rows.
+   - Impact: Core statement and label columns are 100% complete; metadata sparsity must be handled gracefully.
+
+================================================================================
+END OF REPORT
+================================================================================

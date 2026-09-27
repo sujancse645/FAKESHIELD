@@ -1,0 +1,10 @@
+================================================================================
+FAKESHIELD REPRODUCIBILITY ENVIRONMENT INFORMATION
+================================================================================
+Operating System:       Windows-10-10.0.26200-SP0 (Windows 10)
+Python Version:         3.11.9
+pandas Version:         2.3.3
+numpy Version:          2.3.5
+scikit-learn Version:   1.8.0
+Random State / Seed:    42
+================================================================================

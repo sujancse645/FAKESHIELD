@@ -1,0 +1,6 @@
+"case_id","input_type","runs_evaluated","is_deterministic","verdict_run1","verdict_run2","verdict_run3","avg_latency_seconds","variances"
+"det_01_en","text",3,True,"VERIFIED","VERIFIED","VERIFIED",0.0637,"NONE (100% Deterministic)"
+"det_02_ta","text",3,True,"UNVERIFIED","UNVERIFIED","UNVERIFIED",2.8897,"NONE (100% Deterministic)"
+"det_03_hi","text",3,True,"CONTRADICTED","CONTRADICTED","CONTRADICTED",3.7979,"NONE (100% Deterministic)"
+"det_04_ooc","text",3,True,"OUT-OF-CONTEXT","OUT-OF-CONTEXT","OUT-OF-CONTEXT",0.1965,"NONE (100% Deterministic)"
+"det_05_img","image",3,True,"UNVERIFIED","UNVERIFIED","UNVERIFIED",0.5387,"NONE (100% Deterministic)"

@@ -1,0 +1,49 @@
+{
+  "image_id": "tiny",
+  "image_path": "C:\\ML project\\FakeShield\\data\\ocr_samples\\tiny.png",
+  "language_requested": "eng",
+  "image_width": 10,
+  "image_height": 10,
+  "processed_width": 30,
+  "processed_height": 30,
+  "preprocessing": {
+    "grayscale": true,
+    "resize": false,
+    "threshold": true,
+    "deskew": false,
+    "noise_reduction": true,
+    "contrast_enhancement": true,
+    "border": true,
+    "steps_applied": [
+      "grayscale",
+      "noise_reduction",
+      "contrast_enhancement",
+      "threshold",
+      "border"
+    ],
+    "preprocessing_time_seconds": 0.0
+  },
+  "ocr_text_raw": "",
+  "ocr_text_clean": "",
+  "ocr_engine": "tesseract",
+  "tesseract_version": "tesseract v5.5.3.20260724",
+  "ocr_language": "eng",
+  "psm": 6,
+  "oem": 3,
+  "ocr_confidence_mean": -1.0,
+  "ocr_status": "empty",
+  "ocr_error": "",
+  "ocr_processing_time_seconds": 0.1813,
+  "quality_metrics": {
+    "char_count": 0,
+    "word_count": 0,
+    "alphabetic_ratio": 0.0,
+    "digit_ratio": 0.0,
+    "whitespace_ratio": 0.0,
+    "suspicious_symbol_ratio": 0.0,
+    "avg_word_length": 0.0,
+    "is_empty": true,
+    "line_count": 0
+  },
+  "total_processing_time_seconds": 0.419
+}

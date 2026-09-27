@@ -1,0 +1,26 @@
+================================================================================
+FAKESHIELD PHASE 4: OCR REPRODUCIBILITY SPECIFICATION
+================================================================================
+Execution Timestamp (UTC): 2026-09-16T17:53:00.931432+00:00
+Operating System:           Windows-10-10.0.26200-SP0
+Python Version:             3.11.9 (C:\ML project\FakeShield\venv\Scripts\python.exe)
+Tesseract Version:          tesseract v5.5.3.20260724
+pytesseract Version:        0.3.13
+Pillow Version:             12.3.0
+OpenCV Version:             5.0.0
+jiwer Version:              4.0.0
+OCR Languages Available:    ['eng', 'osd', 'tam']
+Page Segmentation Mode:     6 (single uniform block of text)
+OCR Engine Mode:            3 (default LSTM + legacy)
+Random Seed:                42 (used in noise generation)
+Evaluation Samples:         ['english_clear', 'english_noisy', 'english_skewed', 'english_low_contrast', 'blank', 'tiny', 'tamil_news_sample']
+Repetitions in Determinism: 3
+
+Ablation Variants Tested:
+  - A_no_preprocessing
+  - B_grayscale_only
+  - C_grayscale_noise
+  - D_grayscale_contrast
+  - E_grayscale_threshold
+  - F_full_configured
+================================================================================

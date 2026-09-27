@@ -1,0 +1,17 @@
+sample_id,language,condition,preprocessing_config,cer,wer,ocr_confidence,character_count,word_count,processing_time_seconds,status
+english_clear,eng,raw,none,0.0,0.0,95.88,85,17,0.3181,success
+english_clear,eng,preprocessed,default_full,0.0,0.0,95.76,85,17,0.2237,success
+english_noisy,eng,raw,none,0.0,0.0,95.88,85,17,0.3105,success
+english_noisy,eng,preprocessed,default_full,0.0,0.0,95.71,85,17,0.2284,success
+english_skewed,eng,raw,none,0.0,0.0,94.06,85,17,0.3199,success
+english_skewed,eng,preprocessed,default_full,0.0,0.0,95.88,85,17,0.2526,success
+english_low_contrast,eng,raw,none,0.0,0.0,96.0,85,17,0.3335,success
+english_low_contrast,eng,preprocessed,default_full,0.0,0.0,95.65,85,17,0.226,success
+blank,eng,raw,none,N/A,N/A,-1.0,0,0,0.2334,empty
+blank,eng,preprocessed,default_full,N/A,N/A,-1.0,0,0,0.1944,empty
+tiny,eng,raw,none,N/A,N/A,-1.0,0,0,0.1963,empty
+tiny,eng,preprocessed,default_full,N/A,N/A,-1.0,0,0,0.1813,empty
+tamil_news_sample,tam,raw,none,0.0164,0.125,95.62,62,8,0.1816,success
+tamil_news_sample,tam,preprocessed,default_full,0.0164,0.125,95.25,62,8,0.1487,success
+tamil_news_sample,tam+eng,raw,none,0.0164,0.125,95.62,62,8,0.3382,success
+tamil_news_sample,tam+eng,preprocessed,default_full,0.0164,0.125,95.25,62,8,0.2608,success

@@ -1,0 +1,33 @@
+# FakeShield — Pinned Production & Development Requirements
+# Generated from actual installed versions in FakeShield Python 3.11 virtual environment
+
+# Core data science
+pandas==3.0.5
+numpy==2.4.6
+scikit-learn==1.9.1
+
+# Image processing
+Pillow==12.3.0
+opencv-python==5.0.0.93
+
+# OCR interface
+pytesseract==0.3.13
+
+# NLP & Machine Learning
+transformers==5.17.0
+torch==2.14.0
+sentencepiece==0.2.2
+
+# Evaluation & Metrics
+jiwer==4.0.0
+
+# Utilities
+requests==2.34.2
+python-dotenv==1.2.3
+langdetect==1.0.9
+
+# UI Framework
+streamlit==1.63.0
+
+# Testing
+pytest==9.1.1

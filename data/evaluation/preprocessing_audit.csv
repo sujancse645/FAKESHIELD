@@ -1,0 +1,3 @@
+dataset,original_rows,processed_rows,rows_removed,exact_duplicates_removed,empty_rows_removed,text_normalized,invalid_dates,missing_dates,missing_images,missing_sources,label_values,notes
+IFND,56714,56714,0,0,0,56714,10,11321,0,0,"TRUE=37800, Fake=18914",Non-destructive processing; 0 rows removed; 363 conflicting and 227 same-label duplicate statements flagged
+LIAR,12791,12791,0,0,0,12791,0,0,12791,0,"half-true=2627, false=2507, mostly-true=2454, barely-true=2103, true=2053, pants-fire=1047",Official splits preserved; canonical 14-column schema mapped; 6 fine-grained PolitiFact labels untouched

@@ -1,0 +1,11 @@
+case_id,name,input_type,language,claim,evidence_count,nli_result,verdict,confidence,latency,errors,pipeline_status
+CASE_01,English claim with evidence,text,English (en),The Reserve Bank of India kept the benchmark interest rate unchanged at 6.5 percent.,1,ENTAILMENT:0.96,VERIFIED,0.9500,0.384s,None,SUCCESS
+CASE_02,English claim expected to be contradicted,text,English (en),The Reserve Bank of India reduced the benchmark repo rate by 50 basis points to 6.0 percent.,1,CONTRADICTION:0.98,CONTRADICTED,0.9500,0.084s,None,SUCCESS
+CASE_03,English claim with insufficient evidence,text,English (en),A secret underground library containing lost ancient scrolls was discovered in a small northern village.,0,NONE,UNVERIFIED,0.0000,0.014s,None,SUCCESS
+CASE_04,Tamil claim,text,Tamil (ta),Heavy Rain Warnings For Today District Weather Survey Centre Chennai,1,NEUTRAL:0.90,UNVERIFIED,0.0000,3.959s,None,SUCCESS
+CASE_05,Hindi claim,text,Hindi (hi),The Bank of India kept the policy rate at 6.5 per cent.,1,CONTRADICTION:0.96,CONTRADICTED,0.9500,1.038s,None,SUCCESS
+CASE_06,Tamil image,image,English (en),"QEFSTENENT cuTcsflencer Q,Weay MLOWLD QettmM) wemip sss PEMA AHHSletersi.",0,NONE,UNVERIFIED,0.0000,0.598s,None,SUCCESS
+CASE_07,English image,image,English (en),The quick brown fox jumps over the lazy dog.,0,NONE,UNVERIFIED,0.0000,0.568s,None,SUCCESS
+CASE_08,Blank image,image,None (None),,0,NONE,UNVERIFIED,0.0000,0.429s,OCR produced empty or unreadable text. Cannot extract factual claims.,SUCCESS
+CASE_09,Valid URL,url,English (en),Example Domain Example Domain This domain is for use in documentation examples without needing permission.,0,NONE,UNVERIFIED,0.0000,0.393s,None,SUCCESS
+CASE_10,Invalid URL,url,None (None),,0,NONE,UNVERIFIED,0.0000,0.174s,URL acquisition failed (fetch_failed): <urlopen error [Errno 11001] getaddrinfo failed>,SUCCESS

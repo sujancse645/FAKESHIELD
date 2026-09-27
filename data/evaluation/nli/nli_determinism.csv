@@ -1,0 +1,6 @@
+"sample_id","claim","run1_label","run1_score","run2_label","run2_score","run3_label","run3_score","deterministic"
+"det_entail","The Reserve Bank of India kept the benchmark interest rate unchanged at 6.5 percent.","ENTAILMENT",0.9593,"ENTAILMENT",0.9593,"ENTAILMENT",0.9593,True
+"det_contra","The Reserve Bank of India reduced the benchmark repo rate by 50 basis points to 6.0 percent.","CONTRADICTION",0.9751,"CONTRADICTION",0.9751,"CONTRADICTION",0.9751,True
+"det_neut","The Reserve Bank of India plans to introduce a retail central bank digital currency next year.","NEUTRAL",0.99,"NEUTRAL",0.99,"NEUTRAL",0.99,True
+"det_num","The Union Cabinet approved 80000 crore rupees to construct 10000 kilometers of new national highways.","ENTAILMENT",0.7932,"ENTAILMENT",0.7932,"ENTAILMENT",0.7932,True
+"det_neg","Health Ministry confirmed that no serious adverse effects were observed after nationwide vaccination.","NEUTRAL",0.9978,"NEUTRAL",0.9978,"NEUTRAL",0.9978,True

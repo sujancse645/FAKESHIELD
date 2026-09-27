@@ -1,0 +1,100 @@
+sample_id,text,expected_language,source,notes
+en_01,The Reserve Bank of India kept the benchmark repo rate unchanged at 6.5 percent.,English,financial_news,Economic policy report
+en_02,Heavy rainfall warning issued for coastal districts following low pressure area over the Bay of Bengal.,English,weather_report,Meteorological bulletin
+en_03,The Indian Space Research Organisation announced the successful launch of its latest navigation satellite.,English,science_news,Space agency press release
+en_04,Ministry of Health confirms that national immunization coverage has reached record high levels this quarter.,English,health_bulletin,Public health announcement
+en_05,Global stock markets experienced mixed trading today ahead of central bank rate decisions.,English,market_summary,Financial market overview
+en_06,State government announces new infrastructure investment package for highway expansion and flood protection.,English,governance_news,Infrastructure policy release
+en_07,Scientists discover new biological indicators that improve early detection of soil moisture depletion.,English,science_journal,Agricultural science report
+en_08,Railway authorities have rescheduled multiple long-distance trains due to ongoing track modernization work.,English,transport_bulletin,Public transit advisory
+en_09,The National Disaster Management Authority conducted a simulated earthquake response drill across multiple cities.,English,safety_news,Disaster preparedness announcement
+en_10,Exports of agricultural commodities registered double digit growth in the first six months of the fiscal year.,English,trade_report,Trade statistics summary
+en_11,Educational board publishes finalized examination timetable for secondary school certifications.,English,education_notice,Academic schedule notice
+en_12,Renewable energy installations across southern states surpassed historical targets ahead of deadline.,English,energy_report,Clean energy development report
+ta_01,சென்னை வானிலை ஆய்வு மையம் இன்று பல மாவட்டங்களில் கனமழை எச்சரிக்கை விடுத்துள்ளது.,Tamil,tamil_weather_news,Weather forecast report
+ta_02,தமிழ்நாடு அரசு பள்ளிக்கல்வித்துறை புதிய பாடத்திட்டம் குறித்த முக்கிய அறிவிப்பை வெளியிட்டுள்ளது.,Tamil,tamil_education_news,Education department announcement
+ta_03,விவசாயிகளின் நலனுக்காக கூட்டுறவு வங்கிகள் மூலம் புதிய பயிர்க்கடன் திட்டம் தொடங்கப்பட்டுள்ளது.,Tamil,tamil_agriculture_news,Agricultural loan program announcement
+ta_04,சென்னையில் மெட்ரோ ரயில் இரண்டாம் கட்ட பணிகள் விரைவாக நடைபெற்று வருவதாக அதிகாரிகள் தெரிவித்துள்ளனர்.,Tamil,tamil_infrastructure_news,Metro transit development
+ta_05,மதுரை மீனாட்சி அம்மன் கோவில் திருவிழா முன்னேற்பாடுகள் குறித்து மாவட்ட ஆட்சியர் ஆலோசனை நடத்தினார்.,Tamil,tamil_regional_news,Cultural festival coordination
+ta_06,மின்சார வாரியம் பராமரிப்பு பணிகள் காரணமாக நாளை குறிப்பிட்ட பகுதிகளில் மின்தடை அறிவித்துள்ளது.,Tamil,tamil_public_notice,Electricity board maintenance notice
+ta_07,காவிரி நீர் பிடிப்பு பகுதிகளில் பெய்து வரும் தொடர் மழையால் அணைகளுக்கு நீர்வரத்து அதிகரித்துள்ளது.,Tamil,tamil_water_report,Reservoir water inflow report
+ta_08,தமிழகத்தில் தொழில் முதலீடுகளை ஈர்க்க புதிய தொழில் கொள்கை விரைவில் வெளியிடப்படும் என அமைச்சர் கூறினார்.,Tamil,tamil_business_news,Industrial policy announcement
+ta_09,அரசு மருத்துவமனைகளில் நவீன மருத்துவ உபகரணங்கள் நிறுவ கூடுதல் நிதி ஒதுக்கீடு செய்யப்பட்டுள்ளது.,Tamil,tamil_health_news,Public healthcare funding announcement
+ta_10,தீபாவளி பண்டிகையை முன்னிட்டு பொதுமக்கள் சொந்த ஊர் செல்ல சிறப்பு பேருந்துகள் இயக்கப்பட உள்ளன.,Tamil,tamil_transport_news,Festival special transit notice
+ta_11,மாநில அளவில் நடைபெற்ற அறிவியல் கண்காட்சியில் பள்ளி மாணவர்கள் தங்களின் புதிய படைப்புகளை காட்சிப்படுத்தினர்.,Tamil,tamil_student_news,State science exhibition report
+ta_12,தூத்துக்குடி துறைமுகம் மூலம் ஏற்றுமதி மற்றும் இறக்குமதி வர்த்தகம் புதிய சாதனை படைத்துள்ளதாக தெரிவிக்கப்பட்டது.,Tamil,tamil_trade_news,Port commercial trade bulletin
+hi_01,भारतीय मौसम विज्ञान विभाग ने उत्तर भारत के कई राज्यों में भारी बारिश का अलर्ट जारी किया है।,Hindi,hindi_weather_news,National weather advisory
+hi_02,केंद्रीय मंत्रिमंडल ने किसानों के कल्याण के लिए नई आर्थिक सहायता योजना को मंजूरी दी है।,Hindi,hindi_governance_news,Cabinet agricultural policy
+hi_03,भारतीय रिजर्व बैंक ने मौद्रिक नीति समिति की बैठक के बाद ब्याज दरों को स्थिर रखने का निर्णय लिया।,Hindi,hindi_financial_news,Reserve Bank monetary policy
+hi_04,स्वास्थ्य मंत्रालय ने देशभर के सभी प्राथमिक स्वास्थ्य केंद्रों में डिजिटल सेवाएं शुरू करने की घोषणा की।,Hindi,hindi_health_news,Health ministry digital initiative
+hi_05,रेलवे प्रशासन ने आगामी त्योहारों के दौरान यात्रियों की सुविधा के लिए विशेष ट्रेनें चलाने का फैसला किया है।,Hindi,hindi_railway_news,Festival transit bulletin
+hi_06,भारतीय अंतरिक्ष अनुसंधान संगठन ने सौर मिशन के अंतर्गत एकत्र किए गए वैज्ञानिक आंकड़ों को साझा किया।,Hindi,hindi_science_news,Space research mission data
+hi_07,राज्य सरकार ने युवाओं को तकनीकी कौशल सिखाने के लिए नए प्रशिक्षण केंद्रों की स्थापना का प्रस्ताव रखा।,Hindi,hindi_education_news,Skill training initiative
+hi_08,सड़क परिवहन एवं राजमार्ग मंत्रालय ने राष्ट्रीय राजमार्गों के विस्तार के लिए नई परियोजनाएं स्वीकृत कीं।,Hindi,hindi_infrastructure_news,Highways development project
+hi_09,पर्यावरण मंत्रालय ने प्रदूषण नियंत्रण के लिए उद्योगों को कड़े दिशा-निर्देशों का पालन करने का निर्देश दिया।,Hindi,hindi_environment_news,Pollution control directives
+hi_10,शेयर बाजार में आज बैंकिंग और ऑटोमोबाइल कंपनियों के शेयरों में अच्छी बढ़त देखी गई।,Hindi,hindi_market_news,Stock market performance
+hi_11,ऊर्जा क्षेत्र में नवीकरणीय स्रोतों के योगदान में निरंतर वृद्धि दर्ज की जा रही है।,Hindi,hindi_energy_news,Renewable energy sector summary
+hi_12,खेल मंत्रालय ने आगामी अंतरराष्ट्रीय प्रतियोगिताओं की तैयारी कर रहे खिलाड़ियों के लिए विशेष वित्तीय सहायता की घोषणा की।,Hindi,hindi_sports_news,Athletic funding announcement
+te_01,బంగాళాఖాతంలో ఏర్పడిన అల్పపీడనం కారణంగా కోస్తాంధ్ర జిల్లాల్లో భారీ వర్షాలు కురిసే అవకాశం ఉంది.,Telugu,telugu_weather_news,Coastal rainfall warning
+te_02,రైతుల సంక్షేమం కోసం ప్రభుత్వం కొత్త సాగునీటి ప్రాజెక్టుల నిర్మాణాన్ని వేగవంతం చేస్తోంది.,Telugu,telugu_agriculture_news,Irrigation project announcement
+te_03,హైదరాబాద్ నగరంలో మెట్రో రైలు రెండో దశ విస్తరణ పనులకు సన్నాహాలు ప్రారంభమయ్యాయి.,Telugu,telugu_infrastructure_news,Hyderabad metro phase 2
+te_04,పాఠశాలల్లో మౌలిక వసతుల కల్పనకు విద్యాశాఖ ప్రత్యేక నిధులు కేటాయించినట్లు అధికారులు తెలిపారు.,Telugu,telugu_education_news,School infrastructure allocation
+te_05,వైద్యారోగ్య రంగంలో నూతన సంస్కరణలు అమలు చేసి గ్రామీణ ప్రాంతాలకు మెరుగైన వైద్యం అందిస్తామని మంత్రి పేర్కొన్నారు.,Telugu,telugu_health_news,Rural healthcare development
+te_06,పండుగల సీజన్ సందర్భంగా ప్రయాణికుల రద్దీని దృష్టిలో ఉంచుకుని అదనపు ఆర్టీసీ బస్సులను నడుపుతున్నారు.,Telugu,telugu_transport_news,Transit schedule advisory
+te_07,రాష్ట్రంలో పారిశ్రామిక పెట్టుబడులను ఆకర్షించేందుకు ప్రభుత్వం ప్రత్యేక రాయితీలను ప్రకటించింది.,Telugu,telugu_business_news,Industrial investment policy
+te_08,శ్రీశైలం మరియు నాగార్జునసాగర్ జలాశయాలకు ఎగువ ప్రాంతాల నుంచి వరద నీరు భారీగా వచ్చి చేరుతోంది.,Telugu,telugu_water_news,Reservoir inflow report
+te_09,యువతకు ఉపాధి అవకాశాలు కల్పించేందుకు నైపుణ్యాభివృద్ధి సంస్థ ఉచిత శిక్షణ తరగతులను నిర్వహిస్తోంది.,Telugu,telugu_employment_news,Skill development program
+te_10,పర్యావరణ పరిరక్షణ కోసం నగరాల్లో మొక్కలు నాటే కార్యక్రమాన్ని విస్తృతంగా చేపట్టాలని అధికారులు పిలుపునిచ్చారు.,Telugu,telugu_environment_news,Urban plantation initiative
+te_11,శాస్త్ర సాంకేతిక రంగాలలో పరిశోధనలను ప్రోత్సహించేందుకు విశ్వవిద్యాలయాల్లో ప్రత్యేక ల్యాబ్‌లు ఏర్పాటు చేస్తున్నారు.,Telugu,telugu_science_news,University laboratory funding
+te_12,జాతీయ స్థాయి క్రీడా పోటీలలో తెలుగు రాష్ట్రాల క్రీడాకారులు అద్భుత ప్రతిభ కనబరిచి పతకాలు సాధించారు.,Telugu,telugu_sports_news,Sports medal victory report
+ml_01,സംസ്ഥാനത്ത് വിവിധ ജില്ലകളിൽ അടുത്ത ദിവസങ്ങളിൽ ശക്തമായ മഴയ്ക്ക് സാധ്യതയുണ്ടെന്ന് കാലാവസ്ഥാ നിരീക്ഷണ കേന്ദ്രം അറിയിച്ചു.,Malayalam,malayalam_weather_news,Heavy rain forecast alert
+ml_02,പൊതുവിദ്യാഭ്യാസ സംരക്ഷണ യജ്ഞത്തിന്റെ ഭാഗമായി സ്കൂളുകളിൽ ഡിജിറ്റൽ ക്ലാസ് മുറികൾ പൂർണ്ണ സജ്ജമായി.,Malayalam,malayalam_education_news,Digital school classrooms
+ml_03,കൃഷിവകുപ്പ് കർഷകർക്കായി പുതിയ വിള ഇൻഷുറൻസ് പദ്ധതി പ്രഖ്യാപിച്ചു.,Malayalam,malayalam_agriculture_news,Crop insurance program
+ml_04,കൊച്ചി മെട്രോയുടെ പുതിയ പാതയുടെ നിർമ്മാണ പ്രവർത്തനങ്ങൾ വേഗത്തിൽ പുരോഗമിക്കുന്നതായി അധികൃതർ വ്യക്തമാക്കി.,Malayalam,malayalam_infrastructure_news,Kochi metro expansion
+ml_05,ആരോഗ്യവകുപ്പ് ആശുപത്രികളിൽ അത്യാധുനിക ചികിത്സാ സൗകര്യങ്ങൾ ഒരുക്കുന്നതിനായി കൂടുതൽ ഫണ്ട് അനുവദിച്ചു.,Malayalam,malayalam_health_news,Healthcare infrastructure fund
+ml_06,ഓണക്കാലത്തെ തിരക്ക് നിയന്ത്രിക്കുന്നതിനായി പ്രത്യേക ട്രെയിനുകളും ബസുകളും സർവീസ് നടത്തും.,Malayalam,malayalam_transport_news,Festival transport services
+ml_07,സംസ്ഥാനത്തെ ഐടി മേഖലയിൽ കൂടുതൽ തൊഴിലവസരങ്ങൾ സൃഷ്ടിക്കുന്നതിനായി പുതിയ പാർക്കുകൾ ആരംഭിക്കും.,Malayalam,malayalam_it_news,IT park employment expansion
+ml_08,വനമേഖലയോട് ചേർന്നുള്ള ജനവാസ കേന്ദ്രങ്ങളിൽ വന്യജീവി ശല്യം തടയാൻ പ്രതിരോധ സംവിധാനങ്ങൾ ശക്തമാക്കും.,Malayalam,malayalam_forest_news,Wildlife protection measures
+ml_09,വിനോദസഞ്ചാര മേഖലയുടെ വികസനത്തിനായി പുതിയ പരിസ്ഥിതി സൗഹൃദ പദ്ധതികൾ നടപ്പിലാക്കുന്നു.,Malayalam,malayalam_tourism_news,Eco-tourism initiatives
+ml_10,തീരദേശ സംരക്ഷണത്തിനായി പുതിയ പുലിമുട്ടുകളുടെ നിർമ്മാണം ഉടൻ ആരംഭിക്കുമെന്ന് മന്ത്രി അറിയിച്ചു.,Malayalam,malayalam_coastal_news,Coastal embankment protection
+ml_11,പരമ്പരാഗത മത്സ്യത്തൊഴിലാളികൾക്ക് സുരക്ഷാ ഉപകരണങ്ങളും ധനസഹായവും ലഭ്യമാക്കുമെന്ന് സർക്കാർ വ്യക്തമാക്കി.,Malayalam,malayalam_fisheries_news,Fisheries welfare scheme
+ml_12,ശാസ്ത്ര സാങ്കേതിക രംഗത്ത് നൂതന ആശയങ്ങൾ അവതരിപ്പിച്ച വിദ്യാർത്ഥികൾക്ക് പുരസ്കാരങ്ങൾ വിതരണം ചെയ്തു.,Malayalam,malayalam_science_news,Student innovation awards
+kn_01,ಕರಾವಳಿ ಮತ್ತು ಮಲೆನಾಡು ಭಾಗಗಳಲ್ಲಿ ಮುಂದಿನ ಎರಡು ದಿನಗಳ ಕಾಲ ಭಾರಿ ಮಳೆಯಾಗುವ ಮುನ್ಸೂಚನೆಯನ್ನು ಹವಾಮಾನ ಇಲಾಖೆ ನೀಡಿದೆ.,Kannada,kannada_weather_news,Coastal weather forecast
+kn_02,ರೈತರ ಆರ್ಥಿಕ ಪ್ರಗತಿಗಾಗಿ ಕೃಷಿ ಇಲಾಖೆಯು ಹೊಸ ಸಬ್ಸಿಡಿ ಯೋಜನೆಯನ್ನು ಜಾರಿಗೆ ತಂದಿದೆ.,Kannada,kannada_agriculture_news,Agricultural subsidy program
+kn_03,ಬೆಂಗಳೂರು ನಮ್ಮ ಮೆಟ್ರೋ ಮೂರನೇ ಹಂತದ ಕಾಮಗಾರಿಗೆ ಕೇಂದ್ರ ಸರ್ಕಾರ ಅನುಮೋದನೆ ನೀಡಿದೆ.,Kannada,kannada_infrastructure_news,Bengaluru Namma Metro phase 3
+kn_04,ಶಿಕ್ಷಣ ಇಲಾಖೆಯು ಸರ್ಕಾರಿ ಶಾಲೆಗಳ ಆಧುನೀಕರಣಕ್ಕಾಗಿ ವಿಶೇಷ ಅನುದಾನ ಬಿಡುಗಡೆ ಮಾಡಿದೆ.,Kannada,kannada_education_news,Public school modernization
+kn_05,ಆರೋಗ್ಯ ಇಲಾಖೆಯು ಗ್ರಾಮೀಣ ಪ್ರದೇಶಗಳಲ್ಲಿ ಉಚಿತ ಆರೋಗ್ಯ ತಪಾಸಣಾ ಶಿಬಿರಗಳನ್ನು ಆಯೋಜಿಸಲು ನಿರ್ಧರಿಸಿದೆ.,Kannada,kannada_health_news,Rural health camp initiative
+kn_06,ಹಬ್ಬದ ಪ್ರಯುಕ್ತ ಸಾರ್ವಜನಿಕರ ಅನುಕೂಲಕ್ಕಾಗಿ ರಾಜ್ಯ ರಸ್ತೆ ಸಾರಿಗೆ ಸಂಸ್ಥೆಯು ಹೆಚ್ಚುವರಿ ಬಸ್‌ಗಳನ್ನು ಓಡಿಸಲಿದೆ.,Kannada,kannada_transport_news,State transport festival service
+kn_07,ರಾಜ್ಯದಲ್ಲಿ ಕೈಗಾರಿಕಾ ಹೂಡಿಕೆಗಳನ್ನು ಹೆಚ್ಚಿಸಲು ಹೊಸ ನೀತಿಯನ್ನು ಶೀಘ್ರದಲ್ಲೇ ಪ್ರಕಟಿಸಲಾಗುವುದು ಎಂದು ಕೈಗಾರಿಕಾ ಸಚಿವರು ಹೇಳಿದರು.,Kannada,kannada_business_news,Industrial investment policy
+kn_08,"ಕಾವೇರಿ ಜಲಾನಯನ ಪ್ರದೇಶದಲ್ಲಿ ಮಳೆ ಚುರುಕುಗೊಂಡಿದ್ದು, ಜಲಾಶಯಗಳಿಗೆ ನೀರಿನ ಒಳಹರಿವು ಗಣನೀಯವಾಗಿ ಹೆಚ್ಚಾಗಿದೆ.",Kannada,kannada_water_news,Cauvery basin reservoir inflow
+kn_09,ಯುವಜನರಿಗೆ ಉದ್ಯೋಗಾವಕಾಶ ಕಲ್ಪಿಸುವ ನಿಟ್ಟಿನಲ್ಲಿ ಬೃಹತ್ ಉದ್ಯೋಗ ಮೇಳವನ್ನು ಆಯೋಜಿಸಲಾಗಿದೆ.,Kannada,kannada_employment_news,Youth job fair announcement
+kn_10,ಪರಿಸರ ಸಂರಕ್ಷಣೆಗಾಗಿ ಪ್ಲಾಸ್ಟಿಕ್ ಬಳಕೆಯನ್ನು ಕಟ್ಟುನಿಟ್ಟಾಗಿ ನಿಷೇಧಿಸಲು ನಗರ ಪಾಲಿಕೆ ಕ್ರಮ ಕೈಗೊಂಡಿದೆ.,Kannada,kannada_environment_news,Plastic ban enforcement
+kn_11,ವಿಜ್ಞಾನ ಮತ್ತು ತಂತ್ರಜ್ಞಾನ ಕ್ಷೇತ್ರದಲ್ಲಿ ಸಂಶೋಧನೆ ನಡೆಸುತ್ತಿರುವ ಯುವ ವಿಜ್ಞಾನಿಗಳಿಗೆ ರಾಜ್ಯ ಪ್ರಶಸ್ತಿ ಪ್ರದಾನ ಮಾಡಲಾಯಿತು.,Kannada,kannada_science_news,Young scientist awards
+kn_12,ಐತಿಹಾಸಿಕ ಪ್ರವಾಸಿ ತಾಣಗಳ ರಕ್ಷಣೆ ಮತ್ತು ನವೀಕರಣಕ್ಕಾಗಿ ಪ್ರವಾಸೋದ್ಯಮ ಇಲಾಖೆ ಸಮಗ್ರ ಯೋಜನೆ ರೂಪಿಸಿದೆ.,Kannada,kannada_tourism_news,Heritage tourism conservation
+ocr_en_clear,"The quick brown fox jumps over the lazy dog.
+Pack my box with five dozen liquor jugs.",English,phase3_ocr_output,OCR clean text from english_clear.png
+ocr_en_noisy,"The quick brown fox jumps over the lazy dog.
+Pack my box with five dozen liquor jugs.",English,phase3_ocr_output,OCR clean text from english_noisy.png
+ocr_en_skewed,"The quick brown fox jumps over the lazy dog.
+Pack my box with five dozen liquor jugs.",English,phase3_ocr_output,OCR clean text from english_skewed.png
+ocr_en_low_contrast,"The quick brown fox jumps over the lazy dog.
+Pack my box with five dozen liquor jugs.",English,phase3_ocr_output,OCR clean text from english_low_contrast.png
+ocr_ta_sample,சென்னை வானிலை ஆய்வு மையம்‌ இன்று மழை எச்சரிக்கை விடுத்துள்ளது.,Tamil,phase3_ocr_output,OCR clean text from tamil_news_sample.png (contains U+200C)
+ocr_blank,,N/A,phase3_ocr_output,OCR output from blank.png (empty string)
+ocr_tiny,,N/A,phase3_ocr_output,OCR output from tiny.png (empty string)
+edge_empty,,N/A,synthetic_edge_case,Completely empty input
+edge_whitespace_only,"   
+	   
+  ",N/A,synthetic_edge_case,Whitespace only characters
+edge_single_char_en,a,N/A,synthetic_edge_case,Single English character
+edge_single_char_ta,த,N/A,synthetic_edge_case,Single Tamil character
+edge_numeric_only,1234567890 9876543210 2026,N/A,synthetic_edge_case,Numbers only
+edge_punctuation_only,... ??? !!! --- @@@ ### $$$ %%%,N/A,synthetic_edge_case,Punctuation and symbols only
+edge_short_word_en,hi,N/A,synthetic_edge_case,Two letter English word below threshold
+edge_short_word_ta,வா,N/A,synthetic_edge_case,Short Tamil word below linguistic character threshold
+mixed_ta_en_01,Chennai-யில் heavy rain எச்சரிக்கை விடுக்கப்பட்டுள்ளது என வானிலை மையம் தெரிவித்தது.,Tamil,synthetic_code_mixed,"Tamil dominant with English terms (Chennai, heavy rain)"
+mixed_ta_en_02,Tamil Nadu government announces new IT park in Coimbatore with 5000 job opportunities.,English,synthetic_code_mixed,"English dominant with Tamil proper nouns (Tamil Nadu, Coimbatore)"
+mixed_hi_en_01,Delhi Metro ने passengers के लिए new smart card system शुरू किया है।,Hindi,synthetic_code_mixed,"Hindi dominant with English words (passengers, smart card system)"
+mixed_hi_en_02,The Prime Minister inaugurated the new AIIMS campus in Bilaspur today.,English,synthetic_code_mixed,"English with Hindi acronym/proper noun (AIIMS, Bilaspur)"
+mixed_te_en_01,Hyderabad Cyber Crime Police warning issued regarding online investment scams.,English,synthetic_code_mixed,English text with Telugu regional origin
+mixed_te_en_02,విజయవాడలో కొత్త software technology park ఏర్పాటుకు ప్రభుత్వం ఆమోదం తెలిపింది.,Telugu,synthetic_code_mixed,Telugu dominant with English loan words (software technology park)

@@ -1,0 +1,17 @@
+metric,value,class
+accuracy,0.7667,overall
+macro_precision,0.8162,overall
+macro_recall,0.7667,overall
+macro_f1,0.7571,overall
+precision,0.8333,CONTRADICTION
+recall,1.0,CONTRADICTION
+f1,0.9091,CONTRADICTION
+support,10.0,CONTRADICTION
+precision,1.0,ENTAILMENT
+recall,0.5,ENTAILMENT
+f1,0.6667,ENTAILMENT
+support,10.0,ENTAILMENT
+precision,0.6154,NEUTRAL
+recall,0.8,NEUTRAL
+f1,0.6957,NEUTRAL
+support,10.0,NEUTRAL

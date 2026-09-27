@@ -1,0 +1,11 @@
+================================================================================
+FAKESHIELD ENVIRONMENT REPRODUCIBILITY SPECIFICATION
+================================================================================
+Operating System:       Windows 10 (AMD64)
+Python Version:         3.11.9
+Virtual Env Path:       venv
+PyTorch Device:         cpu (CUDA=False)
+Pinned Requirements:    requirements.txt
+Random Seed Standard:   42
+Offline Execution:      VERIFIED (No network calls or downloads in Phase 2)
+================================================================================

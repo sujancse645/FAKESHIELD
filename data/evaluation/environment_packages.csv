@@ -1,0 +1,16 @@
+package,installed_version,required,import_status,notes
+pandas,3.0.5,True,PASS,Imported as pandas; core FakeShield Phase 2 dependency
+numpy,2.4.6,True,PASS,Imported as numpy; core FakeShield Phase 2 dependency
+scikit-learn,1.9.1,True,PASS,Imported as sklearn; core FakeShield Phase 2 dependency
+Pillow,12.3.0,True,PASS,Imported as PIL; core FakeShield Phase 2 dependency
+opencv-python,5.0.0,True,PASS,Imported as cv2; core FakeShield Phase 2 dependency
+pytesseract,0.3.13,True,PASS,Imported as pytesseract; core FakeShield Phase 2 dependency
+transformers,5.17.0,True,PASS,Imported as transformers; core FakeShield Phase 2 dependency
+torch,2.14.0+cpu,True,PASS,Imported as torch; core FakeShield Phase 2 dependency
+sentencepiece,0.2.2,True,PASS,Imported as sentencepiece; core FakeShield Phase 2 dependency
+jiwer,4.0.0,True,PASS,Imported as jiwer; core FakeShield Phase 2 dependency
+requests,2.34.2,True,PASS,Imported as requests; core FakeShield Phase 2 dependency
+python-dotenv,1.2.3,True,PASS,Imported as dotenv; core FakeShield Phase 2 dependency
+streamlit,1.63.0,True,PASS,Imported as streamlit; core FakeShield Phase 2 dependency
+pytest,9.1.1,True,PASS,Imported as pytest; core FakeShield Phase 2 dependency
+langdetect,1.0.9,True,PASS,Imported as langdetect; core FakeShield Phase 2 dependency

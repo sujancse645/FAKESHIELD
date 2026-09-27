@@ -1,0 +1,44 @@
+# configs/evidence_fusion.yaml
+# FakeShield Phase 8: Evidence Fusion Configuration
+
+# 1. Source Tier Initial Weights (Heuristic starting values; not claimed as scientifically optimal)
+source_tier_weights:
+  1: 1.00   # Official government, central banks, primary institutions
+  2: 0.85   # Verified independent fact-checkers (PolitiFact, FactCheck.org, PIB Fact Check)
+  3: 0.70   # Reputable mainstream journalism and news agencies (The Hindu, Indian Express)
+  4: 0.40   # Unverified, local, aggregator, or unknown sources
+
+# 2. Evidence Fusion Decision Thresholds
+thresholds:
+  # Minimum combined weighted evidence strength required to avoid UNVERIFIED abstention
+  min_evidence_strength: 0.40
+
+  # Minimum margin between support and contradiction to reach a decisive verdict
+  support_margin: 0.30
+  contradiction_margin: 0.30
+
+  # If both weighted support and weighted contradiction exceed this, and margin is small -> MISLEADING
+  conflict_threshold: 0.35
+
+  # Minimum NLI score threshold for an individual evidence item to contribute weight
+  nli_score_threshold: 0.50
+
+# 3. Out-of-Context / Temporal Discrepancy Detection
+out_of_context:
+  # Maximum allowable temporal gap between claim event framing and evidence date
+  max_temporal_gap_months: 18   # Conceptual threshold: > 18 months older than current claim
+  max_temporal_gap_years: 1.5
+
+  # Keywords indicating the claim is framed as a recent or current occurrence
+  currentness_indicators:
+    - "today"
+    - "now"
+    - "currently"
+    - "this year"
+    - "this week"
+    - "this month"
+    - "just announced"
+    - "breaking"
+    - "recent"
+    - "recently"
+    - "latest"

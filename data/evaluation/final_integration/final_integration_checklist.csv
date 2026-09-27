@@ -1,0 +1,33 @@
+item_id,category,test,expected,observed,status,notes
+INT-01,integration,Pipeline class and config importable,Clean import without syntax errors,All classes imported cleanly,PASS,Verified in test_1_pipeline_import
+INT-02,integration,Full pipeline verify() execution,Returns PipelineResult schema,PipelineResult with all metadata returned,PASS,Verified across 10 test cases
+INT-03,integration,Streamlit UI calls real pipeline,UI delegates verification to FakeShieldPipeline,app.py uses FakeShieldPipeline singleton,PASS,Audited src/app.py line 148
+TXT-01,text,Normal English claim processing,Returns decisive or unverified verdict,Verified RBI repo rate returns VERIFIED,PASS,Verified in CASE_01
+TXT-02,text,Empty text handling,Returns UNVERIFIED with insufficient_text,Returns UNVERIFIED; no crash,PASS,Verified in unit tests
+TXT-03,text,Numeric and punctuation text,Returns UNVERIFIED with insufficient_text,Returns UNVERIFIED; no crash,PASS,Verified in unit tests
+TXT-04,text,Long multi-claim text,Extracts up to 5 claims,Extracts up to 5 claims deterministically,PASS,Adheres to max_claims=5
+MUL-01,multilingual,Tamil text language detection,Detected as 'ta' / Tamil,Detected as Tamil (ta),PASS,Verified in CASE_04
+MUL-02,multilingual,Hindi text language detection,Detected as 'hi' / Hindi,Detected as Hindi (hi),PASS,Verified in CASE_05
+MUL-03,multilingual,English translation skip logic,English skips translation layer,"status='skipped_english', original=pivot",PASS,Verified in unit tests
+TRA-01,translation,Indic to English pivot translation,Produces coherent English pivot,English pivot generated via IndicTrans2,PASS,Verified in CASE_04 & CASE_05
+TRA-02,translation,Translation error resilience,Fails safely without crashing,Returns status='failed' on error; no crash,PASS,Verified in unit tests
+OCR-01,OCR,Clear English image OCR,Extracts clean readable text,Extracted 43 characters cleanly,PASS,Verified in CASE_07
+OCR-02,OCR,Tamil image OCR,Extracts Tamil script via Tesseract,Extracted Tamil text,PASS,Verified in CASE_06
+OCR-03,OCR,Blank image safe abstention,Abstains safely without hallucinating,"status='insufficient_text', overall UNVERIFIED",PASS,Verified in CASE_08
+IMG-01,image,Invalid image file handling,Fails gracefully with error message,"Returns UNVERIFIED, error logged",PASS,Verified in unit tests
+RET-01,retrieval,Evidence retrieval provenance,"Items contain URL, publisher, tier",All items have complete provenance fields,PASS,Verified in test_14
+RET-02,retrieval,No-evidence claim abstention,"Returns UNVERIFIED, zero fabricated URLs",Returns UNVERIFIED with 0 evidence,PASS,Verified in CASE_03
+NLI-01,NLI,DeBERTa cross-encoder inference,Outputs ENTAILMENT/CONTRADICTION/NEUTRAL,Canonical probabilities returned,PASS,Verified in test_11
+NLI-02,NLI,NLI failure safety,Degrades to neutral score gracefully,Returns NEUTRAL with score 0.0 on error,PASS,Wrapped in try/except
+EVI-01,evidence,Source reliability tiering (Tiers 1-4),Tiers 1-4 assigned by rules,Tiers 1-4 mapped from config,PASS,Audited source_reliability.py
+EVI-02,evidence,Domain spoofing protection,Query string cannot spoof Tier 1,Strict domain/path matching enforced,PASS,Fixed in FIX-7
+URL-01,URL,Reachable URL ingestion,Extracts clean body text without tags,Text cleanly extracted from example.com,PASS,Verified in CASE_09
+URL-02,URL,Unreachable / invalid URL safe failure,Returns UNVERIFIED without crash,Returns UNVERIFIED; error recorded,PASS,Verified in CASE_10
+ERR-01,error handling,Top-level exception resilience,No unhandled crashes surfaced to UI,All stages wrapped in try/except,PASS,Verified in pipeline.py
+UI-01,UI,Streamlit dashboard launch and render,Renders widgets cleanly without error,Streamlit UI tested and verified,PASS,Verified in test_phase10.py
+CAC-01,caching,Model singleton caching,Models cached on local CPU,Models loaded once via @st.cache_resource,PASS,Verified in app.py
+CAC-02,caching,Session state isolation,New input overwrites old results,Input B overwrites Input A cleanly,PASS,Verified in app.py
+SEC-01,security,Zero hard-coded secrets or credentials,No API keys or passwords in codebase,Zero secrets found across all files,PASS,Scanned all 47+ files
+SEC-02,security,Root .gitignore configured,".env, venv, caches excluded",.gitignore created and verified,PASS,Verified in FIX-9
+REG-01,regression,Full Pytest test suite execution,All test items pass,181 / 181 tests PASSED in 71.23s,PASS,Verified across all 12 modules
+INT-04,integrity,Phase 1 raw dataset hash check,100% SHA-256 match,All 4 raw files 100% MATCH,PASS,Verified via check_raw_hashes.py

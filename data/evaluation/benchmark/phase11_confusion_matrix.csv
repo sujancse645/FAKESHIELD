@@ -1,0 +1,11 @@
+matrix_name,true_label,pred_Fake,pred_TRUE,notes,pred_CONTRADICTION,pred_ENTAILMENT,pred_NEUTRAL,pred_VERIFIED,pred_CONTRADICTED,pred_MISLEADING,pred_OUT-OF-CONTEXT,pred_UNVERIFIED
+Baseline_IFND_Binary,Fake (0),0.0,0.0,IFND Test Split,,,,,,,,
+Baseline_IFND_Binary,TRUE (1),0.0,0.0,IFND Test Split,,,,,,,,
+Phase8_NLI_DeBERTa,CONTRADICTION,,,NLI 30-pair benchmark,10.0,0.0,0.0,,,,,
+Phase8_NLI_DeBERTa,ENTAILMENT,,,NLI 30-pair benchmark,1.0,9.0,0.0,,,,,
+Phase8_NLI_DeBERTa,NEUTRAL,,,NLI 30-pair benchmark,2.0,4.0,4.0,,,,,
+FakeShield_5Way_Benchmark,VERIFIED,,,Multimodal 20-case benchmark,,,,4.0,0.0,0.0,0.0,0.0
+FakeShield_5Way_Benchmark,CONTRADICTED,,,Multimodal 20-case benchmark,,,,0.0,2.0,0.0,0.0,0.0
+FakeShield_5Way_Benchmark,MISLEADING,,,Multimodal 20-case benchmark,,,,0.0,0.0,1.0,0.0,0.0
+FakeShield_5Way_Benchmark,OUT-OF-CONTEXT,,,Multimodal 20-case benchmark,,,,0.0,0.0,0.0,1.0,0.0
+FakeShield_5Way_Benchmark,UNVERIFIED,,,Multimodal 20-case benchmark,,,,0.0,0.0,0.0,0.0,12.0

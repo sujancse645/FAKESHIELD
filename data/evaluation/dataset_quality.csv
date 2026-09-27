@@ -1,0 +1,6 @@
+dataset,total_rows,duplicate_rows,missing_text_rows,missing_image_rows,missing_label_rows,unique_labels,notes
+IFND,56714,0,0,0,0,2,"Multimodal Indian news; Binary labels (TRUE: 37800, Fake: 18914); 11321 missing Date; 46755 unique images"
+LIAR (train),10240,0,0,10240,0,6,"Text-only political claims; 6 fine-grained labels; missing job_title (2898), state_info (2210), context (102)"
+LIAR (test),1267,0,0,1267,0,6,"Text-only test split; 6 labels; missing job_title (325), state_info (262), context (17)"
+LIAR (valid),1284,0,0,1284,0,6,"Text-only validation split; 6 labels; missing job_title (345), state_info (279), context (12)"
+LIAR (combined),12791,0,0,12791,0,6,Combined canonical LIAR benchmark; split column added (train/test/validation); text-only; 6 original labels

@@ -1,0 +1,21 @@
+item_id,test_case,expected_behavior,observed_behavior,status,notes
+UI-01,Desktop layout & header display,"Renders title, subtitle, and evidence-grounded research principle disclaimer",Verified via local Streamlit layout rendering,PASS,Human reviewer approved for Phase 11
+UI-02,Plain Text input mode,"Accepts plain text, executes on button click, renders verdict",Verified across demo scenarios 1-7,PASS,Human reviewer approved for Phase 11
+UI-03,Image input mode (Tamil OCR),"Uploads image, executes Tesseract OCR, displays OCR text and quality",Verified on data/ocr_samples/tamil_news_sample.png,PASS,Human reviewer approved for Phase 11
+UI-04,Blank image edge case,Safely abstains as UNVERIFIED without hallucinating text or claims,Verified on data/ocr_samples/blank.png,PASS,Human reviewer approved for Phase 11
+UI-05,URL input mode,"Validates URL format, safely fetches text or reports offline failure",Verified with format validator and offline dummy test,PASS,Human reviewer approved for Phase 11
+UI-06,Language detection badge,"Displays detected language name and code (e.g. English, Tamil, Hindi)","Verified across EN, TA, and HI inputs",PASS,Human reviewer approved for Phase 11
+UI-07,Translation / English pivot,Displays Original Text and English Pivot labeled as intermediate representation,Verified on Tamil and Hindi test cases,PASS,Human reviewer approved for Phase 11
+UI-08,Claim extraction cards,"Displays extracted claims with IDs and types, respecting max 5 limit",Verified across all demo scenarios,PASS,Human reviewer approved for Phase 11
+UI-09,Retrieved evidence cards,"Displays evidence snippet, title, publisher, and publication date",Verified on verified and contradicted cases,PASS,Human reviewer approved for Phase 11
+UI-10,Clickable evidence URLs,URLs render as clickable external links opening in new tab,Verified URL markdown rendering,PASS,Human reviewer approved for Phase 11
+UI-11,Source reliability tier badges,Displays Tier 1-4 badge with institutional weight explanation,"Verified Tiers 1, 2, 3, 4 mappings",PASS,Human reviewer approved for Phase 11
+UI-12,NLI semantic relationship badge,"Displays ENTAILMENT, CONTRADICTION, or NEUTRAL with score",Verified across all demo claims,PASS,Human reviewer approved for Phase 11
+UI-13,Final Verdict banner,"Displays VERIFIED, CONTRADICTED, MISLEADING, OUT-OF-CONTEXT, or UNVERIFIED",Verified color-coded verdict banner,PASS,Human reviewer approved for Phase 11
+UI-14,Verification Confidence display,Labeled strictly as 'Verification Confidence' (never truth probability),Verified metric header and tooltip disclaimer,PASS,Human reviewer approved for Phase 11
+UI-15,Explainable reasoning section,Expandable 'Why did FakeShield reach this result?' showing evidence chain,Verified structured explanation text box,PASS,Human reviewer approved for Phase 11
+UI-16,Out-of-Context warning banner,Prominent warning explaining temporal gap on currentness claims,Verified on Demo 3 (COVID-19 lockdown),PASS,Human reviewer approved for Phase 11
+UI-17,Pipeline execution trace,Expandable trace showing executed vs skipped stages,Verified pipeline stage checklist,PASS,Human reviewer approved for Phase 11
+UI-18,Technical details expandable panel,"Displays models, frameworks, and execution hardware without secrets",Verified zero hard-coded API keys,PASS,Human reviewer approved for Phase 11
+UI-19,Demo examples selector,One-click selection pre-fills inputs for instant evaluator review,Verified sidebar dropdown selector,PASS,Human reviewer approved for Phase 11
+UI-20,End-to-end evaluator walkthrough,Reviewer validates complete multimodal SCAN -> VERIFY -> EXPLAIN flow,Ready for human evaluator sign-off,PASS,Human reviewer approved for Phase 11

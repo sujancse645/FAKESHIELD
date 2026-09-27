@@ -1,0 +1,20 @@
+"sample_id","claim_id","search_query","retrieval_status","api_status","evidence_count"
+"eval_claim_02","eval_claim_02_c01","India signed 250 documents Space cooperation 59","api_unavailable","api_unavailable",0
+"eval_claim_03","eval_claim_03_c01","The Reserve Bank India kept benchmark interest","success","api_unavailable",1
+"eval_claim_04","eval_claim_04_c01","The government allocate 500 crore rupees flood","api_unavailable","api_unavailable",0
+"eval_claim_05","eval_claim_05_c01","Health Ministry confirmed no serious adverse effects","success","api_unavailable",1
+"eval_claim_06","eval_claim_06_c01","ISRO successfully placed 3 satellites polar orbit","success","api_unavailable",1
+"eval_claim_07","eval_claim_07_c01","The Union Cabinet approved 80000 crore rupees","success","api_unavailable",1
+"eval_claim_08","eval_claim_08_c01","Regional Meteorological Centre Chennai issued heavy rainfall","success","api_unavailable",1
+"eval_claim_09","eval_claim_09_c01","The unemployment rate reached 3 4 percent","success","api_unavailable",1
+"eval_claim_10","eval_claim_10_c01","Gasoline prices doubled across country since administration","success","api_unavailable",1
+"eval_claim_11","eval_claim_11_c01","More 40 million Americans currently dependent food","api_unavailable","api_unavailable",0
+"eval_claim_12","eval_claim_12_c01","The state budget deficit reduced 5 billion","api_unavailable","api_unavailable",0
+"eval_claim_13","eval_claim_13_c01","Over 300000 manufacturing jobs created United States","api_unavailable","api_unavailable",0
+"eval_claim_14","eval_claim_14_c01","Public health officials confirmed no evidence bacterial","success","api_unavailable",2
+"eval_claim_15","eval_claim_15_c01","The Chennai Meteorological Center issued heavy rain","success","api_unavailable",1
+"eval_claim_16","eval_claim_16_c01","The Chief Minister announced interest-free crop loans","success","api_unavailable",1
+"eval_claim_17","eval_claim_17_c01","The Reserve Bank India decided not make","success","api_unavailable",1
+"eval_claim_18","eval_claim_18_c01","The government approved 80000 crore rupees construct","success","api_unavailable",1
+"eval_claim_19","eval_claim_19_c01","Authorities declared high alert due severe cyclone","success","api_unavailable",1
+"eval_claim_20","eval_claim_20_c01","Water board officials stated there no water","success","api_unavailable",1

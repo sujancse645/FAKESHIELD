@@ -1,0 +1,54 @@
+================================================================================
+FAKESHIELD ENVIRONMENT DIAGNOSTIC REPORT (PHASE 2)
+================================================================================
+Project Root:           C:\ML project\FakeShield
+Operating System:       Windows-10-10.0.26200-SP0
+Python Version:         3.11.9
+Python Executable:      C:\ML project\FakeShield\venv\Scripts\python.exe
+Virtual Environment:    ACTIVE (venv)
+Pip Version:            C:\Users\sujan l\AppData\Local\Programs\Python\Python311\Scripts\pip.EXE
+
+INSTALLED PACKAGE MATRIX:
+------------------------------------------------------------
+Package            Version            Import Status
+------------------------------------------------------------
+pandas             3.0.5              PASS
+numpy              2.4.6              PASS
+sklearn            1.9.1              PASS
+PIL                12.3.0             PASS
+cv2                5.0.0              PASS
+pytesseract        0.3.13             PASS
+transformers       5.17.0             PASS
+torch              2.14.0+cpu         PASS
+sentencepiece      0.2.2              PASS
+jiwer              4.0.0              PASS
+requests           2.34.2             PASS
+dotenv             1.2.3              PASS
+streamlit          1.63.0             PASS
+pytest             9.1.1              PASS
+langdetect         1.0.9              PASS
+
+PYTORCH & ACCELERATION:
+------------------------------------------------------------
+PyTorch Version:        2.14.0+cpu
+CUDA Available:         False
+CUDA Version:           N/A
+Device Count:           0
+Selected Device:        cpu
+
+TESSERACT OCR ENGINE:
+------------------------------------------------------------
+Python Binding:         pytesseract (INSTALLED)
+Engine Installed:       True
+Engine Executable:      C:\Program Files\Tesseract-OCR\tesseract.EXE
+Engine Version:         tesseract v5.5.3.20260724
+Available Languages:    ['eng', 'osd']
+Engine Status:          PASS
+
+DATASET ACCESS & INTEGRITY:
+------------------------------------------------------------
+Phase 1 Dataset Access: PASS (all raw, processed, and splits verified)
+Raw Hashes Integrity:   PASS (100% match with Phase 1 baseline)
+================================================================================
+END OF REPORT
+================================================================================

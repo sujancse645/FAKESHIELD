@@ -1,0 +1,27 @@
+================================================================================
+FAKESHIELD PHASE 3 — OCR REPRODUCIBILITY SPECIFICATION
+================================================================================
+Python Version:      3.11.9
+Tesseract Version:   tesseract v5.5.3.20260724
+pytesseract Version: 0.3.13
+Pillow Version:      12.3.0
+OpenCV Version:      5.0.0
+jiwer Version:       4.0.0
+Operating System:    Windows-10-10.0.26200-SP0
+OCR Language:        eng
+PSM:                 6
+OEM:                 3
+Preprocessing:       grayscale, noise_reduction, contrast_enhancement, threshold, border
+Evaluation Samples:  ['english_clear', 'english_noisy', 'english_skewed', 'english_low_contrast', 'blank', 'tiny', 'tamil_news_sample']
+
+CER/WER Results:
+  english_clear: CER=0.0, WER=0.0
+  english_noisy: CER=0.0, WER=0.0
+  english_skewed: CER=0.0, WER=0.0
+  english_low_contrast: CER=0.0, WER=0.0
+  blank: CER=N/A, WER=N/A
+  tiny: CER=N/A, WER=N/A
+  tamil_news_sample (tam): CER=0.0164, WER=0.1250, Confidence=95.25%
+  tamil_news_sample (tam+eng): CER=0.0164, WER=0.1250, Confidence=95.25%
+
+================================================================================

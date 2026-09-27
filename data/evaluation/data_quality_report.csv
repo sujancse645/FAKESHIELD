@@ -1,0 +1,11 @@
+dataset,stage,rows,columns,missing_text,missing_labels,duplicate_rows,unique_labels,notes
+IFND,RAW,56714,7,0,0,0,2,Raw IFND dataset loaded with latin1 encoding
+IFND,PROCESSED,56714,17,0,0,0,2,Safe text normalization and quality flags added
+IFND,TRAIN,45366,18,0,0,0,2,Grouped stratified train split (~80%)
+IFND,VALIDATION,5670,18,0,0,0,2,Grouped stratified validation split (~10%)
+IFND,TEST,5678,18,0,0,0,2,Grouped stratified test split (~10%)
+LIAR,RAW,12791,14,0,0,0,6,"Raw LIAR benchmark splits (train, valid, test)"
+LIAR,PROCESSED,12791,17,0,0,0,6,Combined canonical LIAR benchmark with split column
+LIAR,TRAIN,10240,17,0,0,0,6,Official LIAR train split
+LIAR,VALIDATION,1284,17,0,0,0,6,Official LIAR validation split
+LIAR,TEST,1267,17,0,0,0,6,Official LIAR test split

@@ -1,0 +1,6 @@
+"sample_id","claim_id","search_query","error_type","explanation"
+"eval_claim_02","eval_claim_02_c01","India signed 250 documents Space cooperation 59","no_evidence_found","Query did not match keywords in benchmark corpus and external API key was unconfigured."
+"eval_claim_04","eval_claim_04_c01","The government allocate 500 crore rupees flood","no_evidence_found","Query did not match keywords in benchmark corpus and external API key was unconfigured."
+"eval_claim_11","eval_claim_11_c01","More 40 million Americans currently dependent food","no_evidence_found","Query did not match keywords in benchmark corpus and external API key was unconfigured."
+"eval_claim_12","eval_claim_12_c01","The state budget deficit reduced 5 billion","no_evidence_found","Query did not match keywords in benchmark corpus and external API key was unconfigured."
+"eval_claim_13","eval_claim_13_c01","Over 300000 manufacturing jobs created United States","no_evidence_found","Query did not match keywords in benchmark corpus and external API key was unconfigured."

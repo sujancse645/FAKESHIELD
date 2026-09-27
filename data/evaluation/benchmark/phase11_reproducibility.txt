@@ -1,0 +1,39 @@
+================================================================================
+FAKESHIELD PHASE 11: REPRODUCIBILITY SPECIFICATION
+================================================================================
+
+Timestamp: 2026-09-20T11:09:19.672351
+Operating System: Windows 10 (10.0.26200)
+Python Version: 3.11.9
+Machine Architecture: AMD64
+
+Package Versions:
+- torch: 2.14.0+cpu
+- transformers: 5.17.0
+- scikit-learn: 1.9.1
+- pandas: 3.0.5
+- numpy: 2.4.6
+
+Phase 1 Raw Dataset Cryptographic Hashes (SHA-256):
+- IFND.csv:  3728c7b785ea93c9dadcc61a4c549c0eddd71a5fb6a1a31be08b5235ee4f5bfa [100% MATCH]
+- train.tsv: 23ef8cb7ff57b25c941100d0744039cebc595d65a67ea190f72b330a658d8c36 [100% MATCH]
+- valid.tsv: 8dd3d7ed1a11e78ed7df090c9eddb0f91147f895850c78d49dd7b4e88fd09a16 [100% MATCH]
+- test.tsv:  ee41e2c741e0019216952625145af8c4aa8c8d3057ec68284b134267bb845e6f [100% MATCH]
+
+Baseline Configuration (TF-IDF + Logistic Regression):
+- Vectorizer: TfidfVectorizer(ngram_range=(1, 2), max_features=10000, sublinear_tf=True)
+- Classifier: LogisticRegression(C=1.0, max_iter=1000, random_state=42, solver='lbfgs')
+- Train / Val / Test Policy: Strictly fit on train split; validation used for model selection; test evaluated once.
+- Preprocessing: Safe lowercase and whitespace normalization (preserving numbers and negations).
+
+FakeShield Neural Models & Checkpoints:
+- NLI Cross-Encoder: cross-encoder/nli-deberta-v3-small (Local CPU inference)
+- Multilingual Translation: ai4bharat/indictrans2-indic-en-1B (RotaryIndicTrans eager execution)
+- OCR Engine: Tesseract OCR v5.5.0.20241111 (eng, osd, tam)
+
+Random Seeds:
+- Global Python Hash Seed: Deterministic
+- Scikit-Learn Random State: 42
+- PyTorch Determinism: Deterministic CPU evaluation
+
+================================================================================

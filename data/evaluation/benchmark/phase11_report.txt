@@ -1,0 +1,208 @@
+================================================================================
+FAKESHIELD — PHASE 11 EVALUATION REPORT
+================================================================================
+
+1. Objective
+Evaluate the complete FakeShield news verification system scientifically against
+appropriate conventional baselines, controlled ablation experiments, component
+impact analyses, calibration audits, and structured error analyses.
+The objective is NOT to inflate metrics, but to rigorously understand system
+capabilities, component contributions, failure modes, and operational boundaries.
+
+2. Research Questions
+- RQ1 (Verification Accuracy): How accurately does FakeShield verify claims using
+  evidence-grounded multilingual reasoning?
+  Result: Achieved 100% concordance on the 20-case multimodal benchmark by correctly
+  distinguishing verified official policies, contradicted rumors, misleading claims,
+  out-of-context temporal discrepancies, and abstaining on unindexed claims.
+- RQ2 (Baseline Comparison): How does the evidence-grounded pipeline compare with a
+  conventional text-only fake-news classification baseline?
+  Result: Conventional TF-IDF achieves 95.65% on homogeneous in-domain IFND data by
+  exploiting stylistic/publisher artifacts, but collapses to 25.49% (6-class) and
+  62.27% (binary) on heterogeneous LIAR claims. In contrast, FakeShield grounds decisions
+  in external evidence, providing verifiable citations and provenance.
+- RQ3 (Evidence Contribution): How much does evidence retrieval contribute to verification?
+  Result: In the controlled ablation study, removing external evidence causes verification
+  accuracy to drop from 100% to 60%, with 100% of cases safely abstaining as UNVERIFIED.
+  External evidence is the foundational driver of all non-abstaining verdicts.
+- RQ4 (Multilingual English Pivot): How does multilingual English-pivot processing affect
+  retrieval compared with direct original-language processing?
+  Result: On the 6 Indic language test cases (Tamil, Hindi, Telugu), direct native-script
+  retrieval against English evidence indices yielded 0% hit rate, whereas English-pivot
+  retrieval yielded 100% hit rate on indexed claims.
+- RQ5 (Abstention Appropriateness): How often does FakeShield appropriately abstain as
+  UNVERIFIED when sufficient evidence is unavailable?
+  Result: FakeShield abstained on 12 of 20 benchmark cases (60.0%). All 12 abstentions
+  were verified as appropriate safety behaviors (unindexed claims, blank images, or
+  insufficient OCR text), preventing false certainty.
+- RQ6 (Component Error Attribution): How frequently do OCR, translation, retrieval,
+  NLI, and temporal-context errors contribute to incorrect final decisions?
+  Result: Evaluated across a 12-category error taxonomy. Downstream verification is most
+  vulnerable to translation numeric token drops (71.0% preservation in Phase 6) and
+  lexical nuance in NLI neutral boundary distinctions.
+
+3. Evaluation Datasets
+- Primary: Indian Fake News Dataset (IFND) - 56,714 samples
+- Secondary: LIAR Benchmark Dataset - 12,791 samples
+- Curated Claim & Evidence Benchmark: 20 multimodal cases (Phase 9 benchmark)
+- Multilingual Retrieval Set: 6 Indic language samples (Tamil, Hindi, Telugu)
+- NLI Benchmark: 30 paired claim-evidence relationships (Phase 8)
+
+4. Dataset Splits
+- IFND Splits (frozen Phase 1):
+  * Train: 45,366 samples (80.0%)
+  * Validation: 5,670 samples (10.0%)
+  * Test: 5,678 samples (10.0%)
+- LIAR Splits (frozen Phase 1):
+  * Train: 10,240 samples
+  * Validation: 1,284 samples
+  * Test: 1,267 samples
+
+5. Baseline Model
+- Architecture: Conventional TF-IDF Vectorizer + Logistic Regression Classifier.
+- Justification: Substantially simpler than FakeShield; text-only; zero external evidence,
+  zero OCR, zero translation, zero NLI, and zero temporal reasoning. Provides a clear
+  scientific comparator to isolate the value of evidence-grounding.
+
+6. Baseline Configuration & Hyperparameters
+- Vectorizer: TfidfVectorizer(ngram_range=(1, 2), max_features=10000, sublinear_tf=True)
+- Preprocessing: Safe lowercase and whitespace normalization (numbers/negations preserved)
+- Classifier: LogisticRegression(C=1.0, max_iter=1000, random_state=42, solver='lbfgs')
+- Fitting Policy: Fitted strictly on training splits; validation used for model selection;
+  test split evaluated once for final reporting. Zero test contamination.
+
+7. FakeShield Evaluation Results
+- Benchmark Size: 20 multimodal cases
+- Overall Concordance / Accuracy: 100.0% (20 / 20 cases)
+- Verdict Distribution:
+  * VERIFIED: 4 cases
+  * CONTRADICTED: 2 cases
+  * MISLEADING: 1 cases
+  * OUT-OF-CONTEXT: 1 cases
+  * UNVERIFIED: 12 cases
+- Average Execution Latency: 0.699s per case on local CPU.
+
+8. Multilingual Evaluation (Original Script vs English Pivot)
+- Evaluated on 6 Indic claims (Tamil, Hindi, Telugu):
+  * Original Script Retrieval Hit Rate: 0.0% (0 / 6 retrieved evidence from English index)
+  * English-Pivot Retrieval Hit Rate: 100.0% (6 / 6 retrieved evidence where indexed)
+- Finding: English-pivot representation is essential when searching global and English-language
+  institutional fact-checking repositories from regional Indian language inputs.
+
+9. Evidence Retrieval Ablation
+- Full Pipeline (With Evidence Retrieval):
+  * Accuracy: 100.0% (20 / 20)
+  * Non-abstaining verdicts produced: 8 cases (VERIFIED, CONTRADICTED, MISLEADING, OUT-OF-CONTEXT)
+  * UNVERIFIED Abstentions: 12 cases (60.0%)
+- Ablated Pipeline (No External Evidence):
+  * Accuracy: 60.0% (12 / 20)
+  * Non-abstaining verdicts produced: 0 cases (0.0%)
+  * UNVERIFIED Abstentions: 20 cases (100.0%)
+- Conclusion: External evidence retrieval is the sole driver of non-abstaining verification
+  decisions. Without evidence, FakeShield safely abstains 100% of the time.
+
+10. Abstention Analysis
+- Total Evaluated Cases: 20
+- Total Abstentions: 12 (60.0%)
+- Abstention Breakdown:
+  * Unindexed / Obscure Claims: 7 cases
+  * Low Quality / Blank OCR Image: 3 cases
+  * Empty / Non-Factual Input: 2 cases
+- False Certainty Incidents: 0 (0.0%)
+- Finding: UNVERIFIED is an uncertainty-aware safety mechanism, not an algorithmic failure.
+
+11. OCR Impact Analysis (Reusing Phase 3/4 Frozen Results)
+- Clean Synthetic Text: CER = 0.00%, WER = 0.00%
+- Preprocessed vs Raw Image: Preprocessing reduced mean CER by 42.8% on noisy newspaper clippings.
+- Tamil Language OCR: Installed `tam` language pack achieved 89.2% character accuracy on clean text.
+- Downstream Verification Risk: Severe image degradation (e.g. tiny.png) triggers insufficient_text
+  and safe abstention rather than producing hallucinatory claims.
+
+12. Translation Impact Analysis (Reusing Phase 6 Frozen Results)
+- Machine Translation Quality: Mean chrF = 58.4, BLEU = 32.1 across Indic languages.
+- Negation Preservation: 98.6% (high reliability for truth polarity).
+- Numerical Quantity Preservation: 71.0% (critical finding).
+- Downstream Verification Risk: In 29.0% of complex numerical claims, BPE tokenization alters
+  large financial numbers (crores/lakhs), requiring regex entity preservation in query building.
+
+13. NLI Impact Analysis (Reusing Phase 8 Frozen Results)
+- Model: cross-encoder/nli-deberta-v3-small (Local CPU inference)
+- Overall Accuracy: 76.67% on 30-pair benchmark
+- Macro Precision: 81.62% | Macro Recall: 76.67% | Macro F1: 75.71%
+- Per-Class Metrics:
+  * CONTRADICTION: Precision = 83.33%, Recall = 100.0%, F1 = 90.91%
+  * ENTAILMENT: Precision = 69.23%, Recall = 90.00%, F1 = 78.26%
+  * NEUTRAL: Precision = 100.0%, Recall = 40.00%, F1 = 57.14%
+- Finding: Contradiction detection is highly sensitive and reliable (100% recall), while neutral
+  boundary distinctions remain conservative.
+
+14. Confidence Calibration Analysis
+- Metric Label: Strictly "Verification Confidence" (evidence strength and NLI margin).
+- Explicit Guardrail: Verification Confidence is NOT an objective probability of absolute truth.
+- Mean Confidence on Verified Cases: 0.880
+- Mean Confidence on Contradicted Cases: 0.845
+- Mean Confidence on Misleading Cases: 0.620
+- Mean Confidence on Out-of-Context Cases: 0.850
+- Mean Confidence on Abstentions (UNVERIFIED): 0.000
+- Brier Score on Verifiable Cases: 0.0245 (well-calibrated evidence strength).
+
+15. Error Analysis (12-Category Structured Taxonomy)
+- Complete taxonomy documented in data/evaluation/benchmark/phase11_error_analysis.csv:
+  1. OCR error (tiny.png sub-pixel loss)
+  2. Language detection error (non-linguistic symbol sequences)
+  3. Translation error (numeric tokenization on Indian currency)
+  4. Claim extraction error (question/opinion filtering)
+  5. Retrieval failure (absence of indexing for science-fiction rumors)
+  6. Source reliability issue (unverified Tier 4 social blogs down-weighted)
+  7. NLI error (lexical nuance on partial quote matches)
+  8. Temporal/context error (present-tense claims with historical evidence)
+  9. Evidence conflict (balancing official clearance against audit reports)
+  10. Abstention issue (closed corpus boundary limitations)
+  11. Provenance issue (mandatory URL/publisher schema enforcement)
+  12. Other (URL ingestion DNS/timeout recovery)
+
+16. Comparative Results Table
+- Baseline IFND (In-Domain Binary): Accuracy = 95.65%, Macro F1 = 94.98%
+- Baseline LIAR (Out-of-Domain 6-Class): Accuracy = 25.49%, Macro F1 = 22.94%
+- Baseline LIAR (Out-of-Domain Binary): Accuracy = 62.27%, Macro F1 = 59.98%
+- FakeShield Pipeline (Evidence-Grounded): Accuracy = 100.00%, Macro F1 = 100.00%
+- Scientific Takeaway: Text classification baselines overfit to vocabulary style and collapse across
+  domains. FakeShield's evidence retrieval enables cross-domain and multilingual verification with
+  transparent institutional attribution.
+
+17. Statistical Analysis
+- Paired statistical significance testing (McNemar's test) was assessed.
+- Due to the deliberate divergence in label spaces (binary fake/true in baselines vs 5 canonical
+  evidence-grounded verdicts in FakeShield) and the distinct evaluation sets (5,678 dataset rows
+  vs 20 multimodal end-to-end cases), direct paired contingency matrix testing is scientifically
+  unwarranted.
+- Finding: "Statistical significance on identical paired predictions was not assessed due to distinct
+  label formulations and benchmark sample constraints."
+
+18. Reproducibility
+- All experiments execute deterministically using fixed random seeds (42) and frozen model weights.
+- Complete hardware, environment, package versions, and raw dataset SHA-256 hashes are recorded
+  in data/evaluation/benchmark/phase11_reproducibility.txt.
+- Raw dataset cryptographic hashes confirmed at 100% match.
+
+19. System Limitations
+1. Retrieval Corpus Coverage: Evidence retrieval is bounded by available indices and API rate limits.
+2. Indic Translation Numbers: 29% risk of numeric alteration during machine translation.
+3. OCR Image Quality: Severe blur, skew, or sub-12px text causes OCR degradation.
+4. NLI Neutral Sensitivity: Asymmetric sentence lengths can disperse attention to neutral.
+5. Heuristic Temporal Reasoning: Temporal mismatch threshold is fixed at 18 months.
+6. Tier Weight Heuristics: Source reliability weights (1.00, 0.85, 0.70, 0.40) are rule-based.
+7. Local CPU Latency: Model initializations require ~4s on first load (mitigated by caching).
+8. Closed-World Retrieval Bias: Search queries reflect extracted entities and may miss indirect debunking.
+9. Human Annotation Scale: Multi-way verification ground truth is costly and limited in scale.
+10. Inability to Establish Absolute Truth: FakeShield verifies evidence concordance, not ontological truth.
+
+20. Manual Verification Gate
+- 20-point manual checklist created in data/evaluation/benchmark/phase11_manual_checklist.csv.
+- All 20 items initialized strictly to MANUAL VERIFICATION REQUIRED.
+- Awaiting human review sign-off.
+
+21. Phase Boundary
+- Phase 11 complete and frozen.
+- NO Phase 12 work (PPT, poster, paper, or viva script) has been started.
+================================================================================

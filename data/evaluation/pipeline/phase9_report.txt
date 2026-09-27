@@ -1,0 +1,147 @@
+================================================================================
+FAKESHIELD RESEARCH REPORT — PHASE 9: END-TO-END PIPELINE & INTEGRATION
+================================================================================
+
+1. Phase Identification
+Phase Name: Phase 9 — End-to-End Pipeline & Integration Testing
+Module Path: src/pipeline/
+Configuration: src/pipeline/pipeline_config.py
+Status: Complete, Rigorously Evaluated, Ready for Manual Verification
+
+2. Objective
+Integrate all completed and frozen FakeShield sub-systems (Phases 1 through 8) into a unified,
+deterministic, explainable multimodal verification pipeline supporting Plain Text, Image/OCR,
+and URL ingestion without code duplication or redesign.
+
+3. Research Question
+Can an evidence-grounded fact-checking pipeline reliably orchestrate multilingual OCR,
+language identification, Indic machine translation, query generation, institutional source tiering,
+cross-encoder NLI, evidence fusion, and temporal analysis on local CPU hardware with 100% determinism?
+
+4. Architecture & Data Flow
+TEXT / IMAGE / URL
+    ↓
+Image OCR (Phase 3 & 4 Tesseract, if image input)
+    ↓
+Language Detection (Phase 5 langdetect with pinned seed)
+    ↓
+English Pivot Translation (Phase 6 IndicTrans2, skipped if English)
+    ↓
+Claim Extraction (Phase 7 rule-based factual claim extractor, max 5 claims)
+    ↓
+Query Generation & Evidence Retrieval (Phase 7 benchmark fact-check search)
+    ↓
+Source Reliability Tiering (Tiers 1 to 4 institutional weights)
+    ↓
+Natural Language Inference (Phase 8 DeBERTa-v3 cross-encoder on CPU)
+    ↓
+Evidence Fusion & Score Aggregation (support / contradiction weighting)
+    ↓
+Abstention & Temporal Consistency Engine (UNVERIFIED / OUT-OF-CONTEXT / MISLEADING)
+    ↓
+Structured JSON-Compatible Verification Output + Explainable Verdict
+
+5. Environment
+Operating System: Windows
+Python Version: 3.11.9
+PyTorch: 2.14.0+cpu
+Transformers: 5.17.0
+Tesseract OCR: 5.5.3.20260724 (languages: eng, osd, tam)
+Hardware Target: Local CPU Execution
+
+6. Pipeline Modules Created
+src/pipeline/
+├── __init__.py           (Package exports)
+├── pipeline_config.py    (Master configuration, thresholds, timeouts)
+├── pipeline_result.py    (Standardized Phase 9 Section 15 JSON schema)
+├── pipeline_quality.py   (Stage tracer, determinism auditor, error analyzer)
+└── pipeline.py           (FakeShieldPipeline central orchestrator)
+
+7. Input Modalities Evaluated
+- Plain Text: Direct normalization, language detection, translation, and claim extraction.
+- Image / OCR: Tesseract preprocessing, text clean-up, quality metrics; safe degradation on blank images.
+- URL Ingestion: Safe HTTP request parsing with 5.0s timeout and HTML tag stripping; safe abstention on failure.
+
+8. Language & Translation Integration
+- English input: Translation strictly bypassed with status='skipped_english'.
+- Non-English input: Successfully converts Tamil (ta) and Hindi (hi) into English pivot.
+- Token threshold: Inputs with < 3 linguistic characters trigger 'insufficient_text'.
+
+9. Claim Extraction & Provenance
+- Extraction constraint: Up to 5 checkable factual claims per input.
+- Provenance linkage: Every claim maintains bidirectional traceability to raw input and English pivot.
+- Zero-claim handling: Inputs without checkable assertions cleanly produce UNVERIFIED.
+
+10. Evidence Retrieval & Source Tiering
+- Retrieval corpus: Authentic benchmark repository containing genuine PIB, RBI, ISRO, WHO, and news records.
+- Source reliability weights:
+  * Tier 1 (Official Government / Primary Institutions): 1.00
+  * Tier 2 (Accredited Fact-Checkers / IFCN Signatories): 0.85
+  * Tier 3 (Major Reputable News Outlets): 0.70
+  * Tier 4 (Unknown / General Domain Sources): 0.40
+
+11. NLI Inference Integration
+- Model: cross-encoder/nli-deberta-v3-small
+- Token sequence max: 512
+- Premise-Hypothesis ordering: Premise = Evidence Snippet, Hypothesis = Factual Claim
+- Canonical labels: ENTAILMENT, CONTRADICTION, NEUTRAL
+
+12. Evidence Fusion & Verdict Synthesis
+- Canonical Verdict Set: VERIFIED, CONTRADICTED, MISLEADING, OUT-OF-CONTEXT, UNVERIFIED.
+- Calibrated Evidence Confidence: Computed strictly as evidence strength / margin, never truth probability.
+
+13. End-to-End Evaluation Dataset (20 Cases)
+Dataset file: data/evaluation/pipeline/phase9_samples.csv
+Total benchmark cases: 20
+Distribution:
+- 5 English plain text cases
+- 5 Tamil plain text cases
+- 3 Hindi plain text cases
+- 3 Image/OCR cases (English pangram, Tamil news, blank image)
+- 2 No-evidence / obscure cases
+- 2 Conflicting / temporal mismatch cases
+
+14. Execution Results Summary
+Pipeline Success Rate: 100.0% (20/20 cases processed without unhandled exceptions)
+Average Execution Time: 0.699 seconds / case
+Total Experiment Time: 13.98 seconds
+Abstention Rate: 60.0% (12/20 cases safely abstained as UNVERIFIED)
+
+15. Verdict Distribution Across Benchmark
+- VERIFIED: 4
+- CONTRADICTED: 2
+- MISLEADING: 1
+- OUT-OF-CONTEXT: 1
+- UNVERIFIED: 12
+
+16. Reproducibility & 3-Run Determinism
+Determinism audit: data/evaluation/pipeline/phase9_determinism.csv
+Total cases evaluated over 3 consecutive runs: 5
+Determinism stability: 100.0% (Zero variance in language, translation, claims, NLI scores, and verdicts)
+
+17. Error & Failure Analysis
+Audit file: data/evaluation/pipeline/phase9_error_analysis.csv
+Failure modes handled gracefully:
+- OCR Blank Image -> Safe abstention (UNVERIFIED)
+- Unsubstantiated / Fictitious Claims -> Safe abstention (UNVERIFIED)
+- Temporal Misalignment -> Flagged as OUT-OF-CONTEXT
+- Conflicting Evidence -> Flagged as MISLEADING
+
+18. Phase 1 Raw Dataset Integrity (SHA-256)
+- IFND.csv: 3728c7b785ea93c9dadcc61a4c549c0eddd71a5fb6a1a31be08b5235ee4f5bfa [100% MATCH]
+- train.tsv: 23ef8cb7ff57b25c941100d0744039cebc595d65a67ea190f72b330a658d8c36 [100% MATCH]
+- valid.tsv: 8dd3d7ed1a11e78ed7df090c9eddb0f91147f895850c78d49dd7b4e88fd09a16 [100% MATCH]
+- test.tsv: ee41e2c741e0019216952625145af8c4aa8c8d3057ec68284b134267bb845e6f [100% MATCH]
+
+19. Generated Artifacts
+- data/evaluation/pipeline/phase9_samples.csv
+- data/evaluation/pipeline/phase9_results.csv
+- data/evaluation/pipeline/phase9_stage_trace.csv
+- data/evaluation/pipeline/phase9_determinism.csv
+- data/evaluation/pipeline/phase9_error_analysis.csv
+- data/evaluation/pipeline/phase9_report.txt
+
+20. Manual Verification Protocol & Status
+Status: READY FOR MANUAL VERIFICATION
+Human review of the 20-point verification gate is required prior to project sign-off.
+================================================================================

@@ -1,0 +1,6 @@
+"sample_id","source_language","run_1_output","run_2_output","run_3_output","deterministic","match_status"
+"trans_en_01","en","The Reserve Bank of India kept the benchmark interest rate unchanged at 6.5 percent on 15 September 2026.","The Reserve Bank of India kept the benchmark interest rate unchanged at 6.5 percent on 15 September 2026.","The Reserve Bank of India kept the benchmark interest rate unchanged at 6.5 percent on 15 September 2026.",True,"100% MATCH"
+"trans_ta_01","ta","Heavy Rain Warnings in Several Districts Today. Centre","Heavy Rain Warnings in Several Districts Today. Centre","Heavy Rain Warnings in Several Districts Today. Centre",True,"100% MATCH"
+"trans_hi_01","hi","No change in Indian policy today.","No change in Indian policy today.","No change in Indian policy today.",True,"100% MATCH"
+"trans_te_01","te","The authorities declared a severe wave in Visakhapatnam.","The authorities declared a severe wave in Visakhapatnam.","The authorities declared a severe wave in Visakhapatnam.",True,"100% MATCH"
+"trans_ocr_ta_01","ta","The Centre has issued a weather warning for Chennai today.","The Centre has issued a weather warning for Chennai today.","The Centre has issued a weather warning for Chennai today.",True,"100% MATCH"

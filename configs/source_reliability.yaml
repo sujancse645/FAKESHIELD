@@ -1,0 +1,100 @@
+# FakeShield Source Reliability Configuration
+# Maps domain patterns and publishers to reliability tiers (1 to 4).
+# NOTE: Source reliability tier is NOT truth. Tier 1 can be irrelevant/wrong;
+# Tier 4 is not automatically false. Tiering is a provenance feature.
+
+tiers:
+  1:
+    name: "Official Primary Source"
+    description: "Government agencies, courts, central banks, official statistical and electoral bodies"
+    domains:
+      # Indian Official
+      - ".gov.in"
+      - ".nic.in"
+      - "rbi.org.in"
+      - "isro.gov.in"
+      - "pib.gov.in"
+      - "eci.gov.in"
+      - "sci.gov.in"
+      - "supremecourtofindia.nic.in"
+      - "indiabudget.gov.in"
+      - "censusindia.gov.in"
+      - "mohfw.gov.in"
+      - "drdo.gov.in"
+      # International Official
+      - ".gov"
+      - ".mil"
+      - "who.int"
+      - "un.org"
+      - "worldbank.org"
+      - "imf.org"
+      - "nasa.gov"
+      - "cdc.gov"
+      - "federalreserve.gov"
+
+  2:
+    name: "Established Fact-Checking Organization"
+    description: "Signatories of the International Fact-Checking Network (IFCN) and reputable verification outlets"
+    domains:
+      # Indian Fact-Checkers
+      - "altnews.in"
+      - "boomlive.in"
+      - "vishvasnews.com"
+      - "newschecker.in"
+      - "factly.in"
+      - "thequint.com/news/webqoof"
+      - "indiatoday.in/fact-check"
+      - "thip.media"
+      # Global Fact-Checkers
+      - "snopes.com"
+      - "politifact.com"
+      - "factcheck.org"
+      - "fullfact.org"
+      - "afp.com/fact-check"
+      - "reuters.com/fact-check"
+      - "apnews.com/hub/ap-fact-check"
+
+  3:
+    name: "Reputable News Organization"
+    description: "Mainstream editorial media outlets with established corrections policies and newsrooms"
+    domains:
+      # Indian Media
+      - "thehindu.com"
+      - "indianexpress.com"
+      - "timesofindia.indiatimes.com"
+      - "hindustantimes.com"
+      - "ndtv.com"
+      - "livemint.com"
+      - "business-standard.com"
+      - "deccanherald.com"
+      - "thewire.in"
+      - "scroll.in"
+      # International Media
+      - "reuters.com"
+      - "apnews.com"
+      - "bbc.com"
+      - "bbc.co.uk"
+      - "nytimes.com"
+      - "washingtonpost.com"
+      - "theguardian.com"
+      - "bloomberg.com"
+
+  4:
+    name: "Unknown / Unverified Source"
+    description: "Social media, unindexed blogs, community forums, or unrecognized web domains"
+    domains:
+      - "twitter.com"
+      - "x.com"
+      - "facebook.com"
+      - "t.me"
+      - "telegram.org"
+      - "whatsapp.com"
+      - "youtube.com"
+      - "reddit.com"
+      - "blogspot.com"
+      - "wordpress.com"
+      - "medium.com"
+      - "quora.com"
+
+default_tier: 4
+default_tier_name: "Unknown / Unverified Source"

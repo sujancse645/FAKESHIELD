@@ -1,0 +1,14 @@
+source_language,language_name,total_samples,success_count,skipped_count,insufficient_count,mean_bleu,mean_chrf,number_preservation_pct,negation_preservation_pct,avg_latency_sec
+bn,Bengali,6,6,0,0,6.82,33.9,50.0,100.0,0.6006
+en,English,8,0,8,0,100.0,100.0,100.0,100.0,0.0
+fr,Unsupported (fr),1,0,0,0,0.0,0.0,100.0,100.0,0.0
+gu,Gujarati,6,6,0,0,9.8,38.81,66.7,100.0,0.8209
+hi,Hindi,6,6,0,0,10.56,34.94,66.7,83.3,0.757
+kn,Kannada,6,6,0,0,23.14,47.83,66.7,100.0,0.8803
+ml,Malayalam,6,6,0,0,12.27,42.21,83.3,100.0,0.8302
+mr,Marathi,6,6,0,0,17.64,49.99,66.7,100.0,0.9189
+none,Unknown (none),5,0,0,5,0.0,0.0,100.0,100.0,0.0
+pa,Punjabi,6,6,0,0,5.59,28.27,83.3,100.0,0.6529
+ta,Tamil,7,7,0,0,9.86,32.24,57.1,100.0,0.728
+te,Telugu,6,6,0,0,5.83,33.82,66.7,100.0,0.7384
+ur,Urdu,6,6,0,0,21.88,52.39,66.7,100.0,0.7522

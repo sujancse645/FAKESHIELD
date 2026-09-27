@@ -1,0 +1,34 @@
+================================================================================
+FAKESHIELD DATA LEAKAGE REPORT
+================================================================================
+
+1. IFND SPLIT LEAKAGE ANALYSIS (Grouped Stratified Split)
+------------------------------------------------------------
+Train Normalized Statements:            44,899
+Validation Normalized Statements:       5,612
+Test Normalized Statements:             5,613
+Cross-split Statements (Train & Val):   0
+Cross-split Statements (Train & Test):  0
+Cross-split Statements (Val & Test):    0
+Cross-split IDs (Train & Val):          0
+Cross-split IDs (Train & Test):         0
+Cross-split IDs (Val & Test):           0
+IFND Leakage Verdict:                   [PASS]
+
+2. LIAR SPLIT LEAKAGE ANALYSIS (Official Benchmark Splits Preserved)
+------------------------------------------------------------
+Train Normalized Statements:            10,223
+Validation Normalized Statements:       1,284
+Test Normalized Statements:             1,267
+Cross-split Statements (Train & Val):   5
+Cross-split Statements (Train & Test):  4
+Cross-split Statements (Val & Test):    0
+Cross-split IDs (Train & Val):          0
+Cross-split IDs (Train & Test):         0
+Cross-split IDs (Val & Test):           0
+LIAR Leakage Verdict:                   [WARNING]
+LIAR Benchmark Note:                    Official LIAR benchmark dataset contains repeated political statements across splits (e.g., standard talking points). Preserving official benchmark splits without re-splitting is strictly required for standard comparison.
+
+================================================================================
+OVERALL DATA LEAKAGE AUDIT STATUS:      [PASS]
+================================================================================
